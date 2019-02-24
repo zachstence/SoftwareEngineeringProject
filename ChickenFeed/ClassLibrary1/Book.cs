@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //This is a test
 namespace ClassLibrary1
 {
-    class Book
+    public class Book
     {
        public int Id { get; set; }
 

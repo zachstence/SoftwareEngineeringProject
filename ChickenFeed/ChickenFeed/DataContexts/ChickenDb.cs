@@ -9,6 +9,6 @@ namespace ChickenFeed.DataContexts
 {
     public class ChickenDb : DbContext
     {
-        //public DbSet<Pieces>  Pieces { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }
