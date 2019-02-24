@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickenFeed", "ChickenFeed\ChickenFeed.csproj", "{4DA9D7FF-EF54-4D0A-9B44-201C49B4BD64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chicken.Entities", "ClassLibrary1\Chicken.Entities.csproj", "{12467270-EBCF-4DB2-8A0F-5183A577250B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4DA9D7FF-EF54-4D0A-9B44-201C49B4BD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA9D7FF-EF54-4D0A-9B44-201C49B4BD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DA9D7FF-EF54-4D0A-9B44-201C49B4BD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12467270-EBCF-4DB2-8A0F-5183A577250B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12467270-EBCF-4DB2-8A0F-5183A577250B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12467270-EBCF-4DB2-8A0F-5183A577250B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12467270-EBCF-4DB2-8A0F-5183A577250B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
