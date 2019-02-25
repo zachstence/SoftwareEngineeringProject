@@ -26,5 +26,10 @@ namespace ChickenFeed.Controllers
 
             return View();
         }
+
+        public ActionResult CallGese()
+        {
+            return View();
+        }
     }
 }

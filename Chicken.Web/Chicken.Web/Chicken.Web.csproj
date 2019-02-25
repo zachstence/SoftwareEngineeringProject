@@ -173,12 +173,32 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.cs" />
+    <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
+      <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\BookMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\BooksDb.cs" />
+    <Compile Include="DataContexts\IdentityDb.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.Designer.cs">
+      <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
+    <Compile Include="Enums\EquipmentType.cs" />
+    <Compile Include="Enums\NinjaType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902242212360_InitialCreate.cs" />
+    <Compile Include="Migrations\201902242212360_InitialCreate.Designer.cs">
+      <DependentUpon>201902242212360_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -257,6 +277,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\BookMigrations\201902250039172_InitialCreate.resx">
+      <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.resx">
+      <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902242212360_InitialCreate.resx">
+      <DependentUpon>201902242212360_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Books.Entities\Books.Entities.csproj">
+      <Project>{100d06fd-6dd9-4373-94cf-dfa94e968c4a}</Project>
+      <Name>Books.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
