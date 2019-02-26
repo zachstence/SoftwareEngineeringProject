@@ -181,6 +181,7 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="customer.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
       <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>

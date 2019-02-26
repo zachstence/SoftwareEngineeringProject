@@ -1,320 +1,341 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Chicken.Web.BundleConfig" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical" MembersFormat="FullSignature">
+  <Class Name="Chicken.Web.BundleConfig">
+    <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\BundleConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.FilterConfig" Collapsed="true">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.FilterConfig">
+    <Position X="9.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>App_Start\FilterConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.EmailService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.EmailService" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\IdentityConfig.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Chicken.Web.SmsService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.SmsService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\IdentityConfig.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Chicken.Web.ApplicationUserManager" Collapsed="true">
+  <Class Name="Chicken.Web.ApplicationUserManager">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\IdentityConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.ApplicationSignInManager" Collapsed="true">
+  <Class Name="Chicken.Web.ApplicationSignInManager">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\IdentityConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.RouteConfig" Collapsed="true">
-    <Position X="2.25" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.RouteConfig">
+    <Position X="2.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\RouteConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Startup" Collapsed="true">
-    <Position X="9.25" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.Startup">
+    <Position X="12.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
       <FileName>App_Start\Startup.Auth.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Ninja" Collapsed="true">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.Ninja">
+    <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAQAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAQAIAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Clan" Collapsed="true">
-    <Position X="5.75" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.Clan">
+    <Position X="5.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.NinjaEquipment" Collapsed="true">
-    <Position X="9.25" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.NinjaEquipment">
+    <Position X="9.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.MvcApplication" Collapsed="true">
-    <Position X="5.75" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.MvcApplication">
+    <Position X="5.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Global.asax.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Controllers.AccountController" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Chicken.Web.Controllers.AccountController">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Chicken.Web.Controllers.AccountController.ChallengeResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAABAChACAAAAAAAAFgEgAABAABMKIAAAMRAAQgAAA=</HashCode>
       <FileName>Controllers\AccountController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Controllers.BooksController" Collapsed="true">
-    <Position X="11" Y="0.5" Width="1.5" />
+  <Class Name="Chicken.Web.Controllers.BooksController">
+    <Position X="14.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Controllers\BooksController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Controllers.HomeController" Collapsed="true">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.Controllers.HomeController">
+    <Position X="2.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Controllers\HomeController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Controllers.ManageController" Collapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.Controllers.ManageController">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Chicken.Web.Controllers.ManageController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\ManageController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAABACAQiAAgAAAAEFhAAAAAAEAIMIAAEEEgAAkAAA=</HashCode>
       <FileName>Controllers\ManageController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.DataContexts.BookMigrations.InitialCreate" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.BookMigrations.InitialCreate" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
       <FileName>DataContexts\BookMigrations\201902250039172_InitialCreate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Chicken.Web.DataContexts.BookMigrations.Configuration" Collapsed="true">
-    <Position X="9.25" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.BookMigrations.Configuration">
+    <Position X="14.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContexts\BookMigrations\Configuration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.DataContexts.BooksDb" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.BooksDb">
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContexts\BooksDb.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.DataContexts.IdentityDb" Collapsed="true">
-    <Position X="4" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.IdentityDb">
+    <Position X="4" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContexts\IdentityDb.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.DataContexts.IdentityMigrations.InitialCreate" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="11" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.IdentityMigrations.InitialCreate" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
       <FileName>DataContexts\IdentityMigrations\201902250014157_InitialCreate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Chicken.Web.DataContexts.IdentityMigrations.Configuration" Collapsed="true">
-    <Position X="11" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.DataContexts.IdentityMigrations.Configuration">
+    <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContexts\IdentityMigrations\Configuration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Migrations.InitialCreate" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.Migrations.InitialCreate" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
       <FileName>Migrations\201902242212360_InitialCreate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Chicken.Web.Migrations.Configuration" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.Migrations.Configuration">
+    <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Migrations\Configuration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ExternalLoginConfirmationViewModel" Collapsed="true">
-    <Position X="4" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ExternalLoginConfirmationViewModel">
+    <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ExternalLoginListViewModel" Collapsed="true">
-    <Position X="5.75" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ExternalLoginListViewModel">
+    <Position X="11" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.SendCodeViewModel" Collapsed="true">
-    <Position X="4" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.SendCodeViewModel">
+    <Position X="7.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.VerifyCodeViewModel" Collapsed="true">
-    <Position X="11" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.VerifyCodeViewModel">
+    <Position X="16.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAEAAAAAAAgAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ForgotViewModel" Collapsed="true">
+  <Class Name="Chicken.Web.Models.ForgotViewModel">
     <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.LoginViewModel" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.LoginViewModel">
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.RegisterViewModel" Collapsed="true">
-    <Position X="11" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.RegisterViewModel">
+    <Position X="11" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ResetPasswordViewModel" Collapsed="true">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ResetPasswordViewModel">
+    <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAgAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ForgotPasswordViewModel" Collapsed="true">
-    <Position X="11" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ForgotPasswordViewModel">
+    <Position X="11" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ApplicationUser" Collapsed="true">
+  <Class Name="Chicken.Web.Models.ApplicationUser">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\IdentityModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ApplicationDbContext" Collapsed="true">
+  <Class Name="Chicken.Web.Models.ApplicationDbContext">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\IdentityModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.IndexViewModel" Collapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.IndexViewModel">
+    <Position X="11" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAQAAAEAEA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ManageLoginsViewModel" Collapsed="true">
-    <Position X="4" Y="4.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ManageLoginsViewModel">
+    <Position X="12.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.FactorViewModel" Collapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.FactorViewModel">
+    <Position X="9.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.SetPasswordViewModel" Collapsed="true">
-    <Position X="5.75" Y="5.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.SetPasswordViewModel">
+    <Position X="9.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ChangePasswordViewModel" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ChangePasswordViewModel">
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.AddPhoneNumberViewModel" Collapsed="true">
+  <Class Name="Chicken.Web.Models.AddPhoneNumberViewModel">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.VerifyPhoneNumberViewModel" Collapsed="true">
-    <Position X="0.5" Y="6.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.VerifyPhoneNumberViewModel">
+    <Position X="0.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Models.ConfigureTwoFactorViewModel" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+  <Class Name="Chicken.Web.Models.ConfigureTwoFactorViewModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Chicken.Web.EquipmentType" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+  <Class Name="Chicken.Web.customer">
+    <Position X="12.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Chicken.Web.EquipmentType">
+    <Position X="2.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACBAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\EquipmentType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Chicken.Web.NinjaType" Collapsed="true">
-    <Position X="2.25" Y="7.75" Width="1.5" />
+  <Enum Name="Chicken.Web.NinjaType">
+    <Position X="2.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Enums\NinjaType.cs</FileName>
