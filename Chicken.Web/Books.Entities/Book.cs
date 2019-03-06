@@ -19,6 +19,8 @@ namespace Books.Entities
 
         public Genre Category { get; set; }
 
+        public string Breast { get; set; }
+
     }
 }
 

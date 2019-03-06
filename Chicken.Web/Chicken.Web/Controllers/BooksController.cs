@@ -12,7 +12,7 @@ using Chicken.Web.DataContexts;
 namespace Chicken.Web.Controllers
 {
     [Authorize]
-    public class BooksController : Controller
+    public class MenuController : Controller
     {
         private BooksDb db = new BooksDb();
 
@@ -48,7 +48,7 @@ namespace Chicken.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Category")] Book book)
+        public ActionResult Create([Bind(Include = "Id,Title,Category,Breast")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Chicken.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Category")] Book book)
+        public ActionResult Edit([Bind(Include = "Id,Title,Category,Breast")] Book book)
         {
             if (ModelState.IsValid)
             {

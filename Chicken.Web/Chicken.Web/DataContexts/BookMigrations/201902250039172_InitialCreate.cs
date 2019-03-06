@@ -14,6 +14,7 @@ namespace Chicken.Web.DataContexts.BookMigrations
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 255),
                         Category = c.Int(nullable: false),
+                        Breast = c.String(true)
                     })
                 .PrimaryKey(t => t.Id);
             

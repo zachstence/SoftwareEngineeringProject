@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Chicken.Web.SmsService" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="8.25" Width="1.5" />
+    <Position X="7.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App_Start\IdentityConfig.cs</FileName>
@@ -59,35 +59,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Ninja">
-    <Position X="7.5" Y="3.75" Width="1.5" />
+    <Position X="11.75" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAQAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAQAIAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Clan">
-    <Position X="5.75" Y="2.25" Width="1.5" />
+    <Position X="5.25" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.NinjaEquipment">
-    <Position X="9.25" Y="3.25" Width="1.5" />
+    <Position X="17" Y="15.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Classes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.MvcApplication">
-    <Position X="5.75" Y="4" Width="1.5" />
+    <Position X="9.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Global.asax.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Controllers.AccountController">
-    <Position X="4" Y="6.25" Width="1.5" />
+    <Position X="4" Y="2.25" Width="1.5" />
     <NestedTypes>
       <Class Name="Chicken.Web.Controllers.AccountController.ChallengeResult" Collapsed="true">
         <TypeIdentifier>
@@ -100,8 +100,8 @@
       <FileName>Controllers\AccountController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.Controllers.BooksController">
-    <Position X="14.5" Y="4.75" Width="1.5" />
+  <Class Name="Chicken.Web.Controllers.MenuController">
+    <Position X="14.25" Y="16" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Controllers\BooksController.cs</FileName>
@@ -115,7 +115,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Controllers.ManageController">
-    <Position X="5.75" Y="6.25" Width="1.5" />
+    <Position X="5.75" Y="2.25" Width="1.5" />
     <NestedTypes>
       <Enum Name="Chicken.Web.Controllers.ManageController.ManageMessageId" Collapsed="true">
         <TypeIdentifier>
@@ -151,7 +151,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.DataContexts.IdentityDb">
-    <Position X="4" Y="4.75" Width="1.5" />
+    <Position X="7.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContexts\IdentityDb.cs</FileName>
@@ -188,7 +188,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Models.ExternalLoginConfirmationViewModel">
-    <Position X="4" Y="3.5" Width="1.5" />
+    <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
@@ -202,7 +202,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Models.SendCodeViewModel">
-    <Position X="7.5" Y="6.25" Width="1.5" />
+    <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>Models\AccountViewModels.cs</FileName>
@@ -279,21 +279,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Models.FactorViewModel">
-    <Position X="9.25" Y="5.5" Width="1.5" />
+    <Position X="9.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Models.SetPasswordViewModel">
-    <Position X="9.25" Y="7" Width="1.5" />
+    <Position X="7.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chicken.Web.Models.ChangePasswordViewModel">
-    <Position X="4" Y="2" Width="1.5" />
+    <Position X="11" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Models\ManageViewModels.cs</FileName>
@@ -320,22 +320,29 @@
       <FileName>Models\ManageViewModels.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Chicken.Web.customer">
-    <Position X="12.25" Y="8.75" Width="1.5" />
+  <Class Name="Chicken.Web.OrderController">
+    <Position X="14.5" Y="6.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>customer.cs</FileName>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAACAAAADAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chicken.Web.MenuController">
+    <Position X="14.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAAAAAAAAAACBAAAAAABAAAAA=</HashCode>
+      <FileName>MenuController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Chicken.Web.EquipmentType">
-    <Position X="2.25" Y="8.5" Width="1.5" />
+    <Position X="17.25" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACBAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\EquipmentType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Chicken.Web.NinjaType">
-    <Position X="2.25" Y="7.25" Width="1.5" />
+    <Position X="8.75" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Enums\NinjaType.cs</FileName>

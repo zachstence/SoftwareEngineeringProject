@@ -6,7 +6,4 @@ using System.ComponentModel;
 
 namespace Chicken.Web
 {
-    public class customer
-    {
-    }
 }
