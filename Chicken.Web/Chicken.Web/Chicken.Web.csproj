@@ -194,6 +194,18 @@
       <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\InventoryDb.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.Designer.cs">
+      <DependentUpon>201903060536070_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\InventoryMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\ShoppingCartDb.cs" />
+    <Compile Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.cs" />
+    <Compile Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.Designer.cs">
+      <DependentUpon>201903060608173_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\ShoppingCartMigrations\Configuration.cs" />
     <Compile Include="Enums\EquipmentType.cs" />
     <Compile Include="Enums\NinjaType.cs" />
     <Compile Include="Global.asax.cs">
@@ -298,6 +310,12 @@
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.resx">
       <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.resx">
+      <DependentUpon>201903060536070_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.resx">
+      <DependentUpon>201903060608173_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902242212360_InitialCreate.resx">
       <DependentUpon>201902242212360_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +324,14 @@
     <ProjectReference Include="..\Books.Entities\Books.Entities.csproj">
       <Project>{100d06fd-6dd9-4373-94cf-dfa94e968c4a}</Project>
       <Name>Books.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Entities\Inventory.Entities.csproj">
+      <Project>{3301627e-2bfa-4b35-ac9f-a73d0a6ae16e}</Project>
+      <Name>Inventory.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingCart.Entities\ShoppingCart.Entities.csproj">
+      <Project>{d1576a3d-be00-4b10-a41d-35a65ba923c5}</Project>
+      <Name>ShoppingCart.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

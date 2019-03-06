@@ -12,13 +12,14 @@ using Chicken.Web.DataContexts;
 namespace Chicken.Web.Controllers
 {
     [Authorize]
-    public class MenuController : Controller
+    public class BooksController : Controller
     {
         private BooksDb db = new BooksDb();
 
         // GET: Books
         public ActionResult Index()
         {
+            //var test = db.Books.Select(x => x.Breast);
             return View(db.Books.ToList());
         }
 
