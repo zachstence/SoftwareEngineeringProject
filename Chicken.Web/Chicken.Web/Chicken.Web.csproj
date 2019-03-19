@@ -188,6 +188,10 @@
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
       <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\BookMigrations\201903192129311_InitialCreate1.cs" />
+    <Compile Include="DataContexts\BookMigrations\201903192129311_InitialCreate1.Designer.cs">
+      <DependentUpon>201903192129311_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\BookMigrations\Configuration.cs" />
     <Compile Include="DataContexts\BooksDb.cs" />
     <Compile Include="DataContexts\IdentityDb.cs" />
@@ -312,6 +316,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataContexts\BookMigrations\201902250039172_InitialCreate.resx">
       <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\BookMigrations\201903192129311_InitialCreate1.resx">
+      <DependentUpon>201903192129311_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.resx">
       <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>

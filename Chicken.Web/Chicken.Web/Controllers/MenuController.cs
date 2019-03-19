@@ -14,16 +14,52 @@ namespace Chicken.Web.Controllers
             return Content("This is the Menu");
         }
 
-        // For Testing
+        // Gets the Starters items
+        public ActionResult Starters()
+        {
+            return Content("This are the plates");
+        }
+
+        // Gets the Individual Pieces items
+        public ActionResult IndividualPieces()
+        {
+            return Content("This are the plates");
+        }
+
+        // Gets the Sides items
+        public ActionResult Sides()
+        {
+            return Content("This are the sides");
+        }
+
+        // Gets the Plates items
         public ActionResult Plates()
         {
             return Content("This are the plates");
         }
 
-        // For Testing
-        public ActionResult Sides()
+        // Gets the Snacks items
+        public ActionResult Snacks()
         {
-            return Content("This are the sides");
+            return Content("This are the plates");
+        }
+
+        // Gets the Specials items
+        public ActionResult Specials()
+        {
+            return Content("This are the plates");
+        }
+
+        // Gets the Kid's Meal items
+        public ActionResult KidsMeals()
+        {
+            return Content("This are the plates");
+        }
+
+        // Gets the Bevarage items
+        public ActionResult Beverages()
+        {
+            return Content("This are the plates");
         }
     }
 }
