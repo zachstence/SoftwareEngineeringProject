@@ -180,11 +180,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Inventory.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="customer.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
       <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.cs" />
+    <Compile Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.Designer.cs">
+      <DependentUpon>201903192126301_Chick_Wing.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\BookMigrations\Configuration.cs" />
     <Compile Include="DataContexts\BooksDb.cs" />
@@ -286,6 +291,8 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\Inventory\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +313,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataContexts\BookMigrations\201902250039172_InitialCreate.resx">
       <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.resx">
+      <DependentUpon>201903192126301_Chick_Wing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.resx">
       <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>

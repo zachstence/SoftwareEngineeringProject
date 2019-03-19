@@ -21,6 +21,10 @@ namespace Books.Entities
 
         public string Breast { get; set; }
 
+        public string Wing { get; set; }
+
+
+
     }
 }
 
