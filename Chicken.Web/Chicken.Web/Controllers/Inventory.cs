@@ -16,7 +16,7 @@ namespace Chicken.Web.Controllers
         private InventoryDb db = new InventoryDb();
         // GET
         public ActionResult Index()
-        {
+        { 
             return View(db.Inventory.ToList());
         }
 
@@ -28,16 +28,17 @@ namespace Chicken.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Manager")]
         public ActionResult Create([Bind(Include = "Id,Name,Cost,Quantity")] Inventory.Entities.Inventory item)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Inventory.Add(item);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        {           
+                if (ModelState.IsValid)
+                {
+                    db.Inventory.Add(item);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
 
-            return View(item);
+                return View(item);        
         }
     }
 }
