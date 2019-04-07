@@ -1,0 +1,35 @@
+﻿@using Chicken.Web.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Menu</h2>
+
+<table class="table">
+  
+  
+ 
+       @foreach (var cart in (List<CartItem>)Session["Cart"])
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => cart.InventoryItem.Name)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cart.InventoryItem.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cart.Quantity)
+                </td>
+                <td>
+                    Total @(cart.InventoryItem.Cost * cart.Quantity)
+                </td>
+
+
+            </tr>
+        }
+    
+
+</table>

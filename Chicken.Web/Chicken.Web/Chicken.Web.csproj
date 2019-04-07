@@ -182,6 +182,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Inventory.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="customer.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.cs" />
     <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
@@ -223,6 +224,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="OrderController.cs" />
@@ -293,6 +295,11 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\Inventory\Create.cshtml" />
+    <Content Include="Views\ShoppingCarts\Create.cshtml" />
+    <Content Include="Views\ShoppingCarts\Delete.cshtml" />
+    <Content Include="Views\ShoppingCarts\Details.cshtml" />
+    <Content Include="Views\ShoppingCarts\Edit.cshtml" />
+    <Content Include="Views\ShoppingCarts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Chicken.Web.Models;
 
 namespace Chicken.Web.DataContexts
 {
@@ -11,5 +12,6 @@ namespace Chicken.Web.DataContexts
         }
 
         public DbSet<ShoppingCart.Entities.ShoppingCart> ShoppingCarts { get; set; }
+       
     }
 }

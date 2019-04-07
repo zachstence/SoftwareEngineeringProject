@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Inventory.Entities.Inventory>
+﻿@using System.Web.UI.HtmlControls
+@model IEnumerable<Inventory.Entities.Inventory>
 
 @{
     ViewBag.Title = "Index";
@@ -13,8 +14,10 @@
 }
 <table class="table">
     <tr>
+
         <th>
             @Html.DisplayNameFor(model => model.Name)
+
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cost)
@@ -22,25 +25,35 @@
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
+        <th>
+
+        </th>
         <th></th>
     </tr>
-@if (User.IsInRole("Manager")) { 
-foreach (var item in Model)
+ 
+@foreach (var item in Model)
  {
-     <tr>
-         <td>
-             @Html.DisplayFor(modelItem => item.Name)
-         </td>
-         <td>
-             @Html.DisplayFor(modelItem => item.Cost)
-         </td>
-         <td>
-             @Html.DisplayFor(modelItem => item.Quantity)
-         </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+
+        </td>
+        @if (User.IsInRole("Manager")) { 
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        }
+        <td>
+            @Html.ActionLink("Add to Cart", "OrderNow", "ShoppingCarts", new { id = item.Id }, null)
+        </td>
 
 
-     </tr>
- }
+    </tr>
+ 
 }
 
 </table>

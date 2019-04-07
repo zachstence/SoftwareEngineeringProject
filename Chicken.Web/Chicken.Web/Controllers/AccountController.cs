@@ -393,6 +393,7 @@ namespace Chicken.Web.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
+            
         }
 
         //
