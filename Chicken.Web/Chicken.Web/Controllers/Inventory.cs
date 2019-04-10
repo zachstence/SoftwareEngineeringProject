@@ -11,6 +11,7 @@ using Chicken.Web.DataContexts;
 
 namespace Chicken.Web.Controllers
 {
+    [Authorize]
     public class InventoryController : Controller
     {
         private InventoryDb db = new InventoryDb();

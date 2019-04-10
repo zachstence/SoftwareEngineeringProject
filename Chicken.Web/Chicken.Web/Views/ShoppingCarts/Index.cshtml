@@ -1,4 +1,5 @@
-﻿@using Chicken.Web.Models
+﻿@model IEnumerable<ShoppingCart.Entities.ShoppingCart>
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Index";
@@ -7,29 +8,45 @@
 <h2>Menu</h2>
 
 <table class="table">
-  
-  
- 
-       @foreach (var cart in (List<CartItem>)Session["Cart"])
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => cart.InventoryItem.Name)
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => cart.InventoryItem.Cost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => cart.Quantity)
-                </td>
-                <td>
-                    Total @(cart.InventoryItem.Cost * cart.Quantity)
-                </td>
 
 
-            </tr>
-        }
+
+    table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryID)
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryID)
+
+            </td>
     
+
+
+        </tr>
+
+    }
+
 
 </table>

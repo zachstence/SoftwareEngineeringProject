@@ -9,15 +9,18 @@ namespace Chicken.Web.Models
 {
     public class CartItem
     {
-    
-       public Inventory.Entities.Inventory InventoryItem { get; set; }
-       public int Quantity { get; set; }
 
-       public CartItem(Inventory.Entities.Inventory inventoryItem, int quantity)
-       {
-           InventoryItem = inventoryItem;
-           Quantity = quantity;
-       }
+        [Key]
+        public string ItemId { get; set; }
 
+        public string CartId { get; set; }
+
+        public int Quantity { get; set; }
+
+        public System.DateTime DateCreated { get; set; }
+
+        public int ProductId { get; set; }
+
+        public virtual Inventory.Entities.Inventory Product { get; set; }
     }
 }

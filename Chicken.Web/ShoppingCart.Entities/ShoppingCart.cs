@@ -7,5 +7,6 @@ namespace ShoppingCart.Entities
     {
          public int Id { get; set; }
          public int InventoryID { get; set; }
+         public string UserId { get; set; }
     }
 }

@@ -184,32 +184,35 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="customer.cs" />
-    <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.cs" />
-    <Compile Include="DataContexts\BookMigrations\201902250039172_InitialCreate.Designer.cs">
-      <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.cs" />
-    <Compile Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.Designer.cs">
-      <DependentUpon>201903192126301_Chick_Wing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataContexts\BookMigrations\Configuration.cs" />
     <Compile Include="DataContexts\BooksDb.cs" />
     <Compile Include="DataContexts\IdentityDb.cs" />
-    <Compile Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.cs" />
-    <Compile Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.Designer.cs">
-      <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
+    <Compile Include="DataContexts\IdentityMigrations\201904092057203_InitialCreate.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201904092057203_InitialCreate.Designer.cs">
+      <DependentUpon>201904092057203_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
     <Compile Include="DataContexts\InventoryDb.cs" />
-    <Compile Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.cs" />
-    <Compile Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.Designer.cs">
-      <DependentUpon>201903060536070_InitialCreate.cs</DependentUpon>
+    <Compile Include="DataContexts\InventoryMigrations\201904092059058_InitialCreate.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201904092059058_InitialCreate.Designer.cs">
+      <DependentUpon>201904092059058_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\InventoryMigrations\201904100253135_UpdateCart.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201904100253135_UpdateCart.Designer.cs">
+      <DependentUpon>201904100253135_UpdateCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\InventoryMigrations\201904100319500_Product.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201904100319500_Product.Designer.cs">
+      <DependentUpon>201904100319500_Product.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\InventoryMigrations\Configuration.cs" />
     <Compile Include="DataContexts\ShoppingCartDb.cs" />
-    <Compile Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.cs" />
-    <Compile Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.Designer.cs">
-      <DependentUpon>201903060608173_Initial Create.cs</DependentUpon>
+    <Compile Include="DataContexts\ShoppingCartMigrations\201904092059402_InitialCreate.cs" />
+    <Compile Include="DataContexts\ShoppingCartMigrations\201904092059402_InitialCreate.Designer.cs">
+      <DependentUpon>201904092059402_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\ShoppingCartMigrations\201904092118282_AddUserId.cs" />
+    <Compile Include="DataContexts\ShoppingCartMigrations\201904092118282_AddUserId.Designer.cs">
+      <DependentUpon>201904092118282_AddUserId.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\ShoppingCartMigrations\Configuration.cs" />
     <Compile Include="Enums\EquipmentType.cs" />
@@ -319,20 +322,23 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DataContexts\BookMigrations\201902250039172_InitialCreate.resx">
-      <DependentUpon>201902250039172_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\IdentityMigrations\201904092057203_InitialCreate.resx">
+      <DependentUpon>201904092057203_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\BookMigrations\201903192126301_Chick_Wing.resx">
-      <DependentUpon>201903192126301_Chick_Wing.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\InventoryMigrations\201904092059058_InitialCreate.resx">
+      <DependentUpon>201904092059058_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\IdentityMigrations\201902250014157_InitialCreate.resx">
-      <DependentUpon>201902250014157_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\InventoryMigrations\201904100253135_UpdateCart.resx">
+      <DependentUpon>201904100253135_UpdateCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\InventoryMigrations\201903060536070_InitialCreate.resx">
-      <DependentUpon>201903060536070_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\InventoryMigrations\201904100319500_Product.resx">
+      <DependentUpon>201904100319500_Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\ShoppingCartMigrations\201903060608173_Initial Create.resx">
-      <DependentUpon>201903060608173_Initial Create.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\ShoppingCartMigrations\201904092059402_InitialCreate.resx">
+      <DependentUpon>201904092059402_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ShoppingCartMigrations\201904092118282_AddUserId.resx">
+      <DependentUpon>201904092118282_AddUserId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902242212360_InitialCreate.resx">
       <DependentUpon>201902242212360_InitialCreate.cs</DependentUpon>
