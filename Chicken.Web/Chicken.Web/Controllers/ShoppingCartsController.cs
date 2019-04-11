@@ -32,45 +32,6 @@ namespace Chicken.Web.Controllers
         }
 
 
-        public ActionResult AddToCart(int id)
-        {
-            // Retrieve the product from the database.           
-            ShoppingCartId = GetCartId();
-
-            var cartItem = _db.ShoppingCartItems.SingleOrDefault(
-                c => c.CartId == ShoppingCartId
-                && c.ProductId == id);
-            if (cartItem == null)
-            {
-                // Create a new cart item if no cart item exists.                 
-                cartItem = new CartItem
-                {
-                    ItemId = Guid.NewGuid().ToString(),
-                    ProductId = id,
-                    CartId = ShoppingCartId,
-                    Product = _db.Inventory.SingleOrDefault(
-                   p => p.Id == id),
-                    Quantity = 1,
-                    DateCreated = DateTime.Now
-                };
-
-                _db.ShoppingCartItems.Add(cartItem);
-                cartItem.Product.Quantity--;
-
-            }
-            else
-            {
-                // If the item does exist in the cart,                  
-                // then add one to the quantity.                 
-                cartItem.Quantity++;
-                cartItem.Product.Quantity--;
-            }
-            _db.SaveChanges();
-
-            var Chicken = GetCartItems();
-
-            return View("Index", Chicken);
-        }
 
         public void Dispose()
         {
