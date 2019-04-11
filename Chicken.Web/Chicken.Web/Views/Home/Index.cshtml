@@ -9,13 +9,17 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Place an order </h2>
-        <p>
-            Big Party? Small dinner? Don't feel like cooking, Let us do it for you. Click below to begin your order!
-        </p>
-        <p><a class="btn btn-default" href="http://localhost:50975/Inventory"> Order &raquo;</a></p>
-    </div>
+    
+    @if (!User.IsInRole("Manager"))
+    {
+        <div class="col-md-4">
+            <h2>Place an order </h2>
+            <p>
+                Big Party? Small dinner? Don't feel like cooking, Let us do it for you. Click below to begin your order!
+            </p>
+            <p><a class="btn btn-default" href="http://localhost:50975/Inventory"> Order &raquo;</a></p>
+        </div>
+    }
     @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
     {
         <div class="col-md-4">
