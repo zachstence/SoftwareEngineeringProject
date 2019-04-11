@@ -51,7 +51,11 @@
             @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCarts", new { id = item.Id }, null)
         </td>
 
+        <td>
 
+            @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
+
+        </td>
     </tr>
  
 }

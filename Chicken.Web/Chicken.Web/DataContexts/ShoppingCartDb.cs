@@ -12,6 +12,7 @@ namespace Chicken.Web.DataContexts
         }
 
         public DbSet<ShoppingCart.Entities.ShoppingCart> ShoppingCarts { get; set; }
-       
+
+        public System.Data.Entity.DbSet<Inventory.Entities.Inventory> Inventories { get; set; }
     }
 }
