@@ -45,11 +45,15 @@
 
             </th>
 
-            <th>
+            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+            {
+                <th>
 
-               Inventory
+                    Inventory
 
-            </th>
+                </th>
+            }
+
             <th></th>
         </tr>
 
@@ -86,11 +90,13 @@
             </td>
 
 
+            @if (User.IsInRole("Manager")|| User.IsInRole("Employee"))
+            {
+                <td>
+                    @(item.Product.Quantity)
 
-            <td>
-                @(item.Product.Quantity)
-
-            </td>
+                </td>
+            }
 
             <td>
                 @Html.ActionLink("Remove From Cart", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)

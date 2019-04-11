@@ -42,20 +42,29 @@
             @Html.DisplayFor(modelItem => item.Cost)
 
         </td>
-        @if (User.IsInRole("Manager")) { 
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
+        @if (User.IsInRole("Manager"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
         }
-        <td>
-            @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
-        </td>
+        
 
-        <td>
+        @if (!User.IsInRole("Manager"))
+        {
+            <td>
+                @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
+            </td>
+        }
 
-            @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
+        @if (User.IsInRole("Manager"))
+        {
+            <td>
 
-        </td>
+                @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
+
+            </td>
+        }
     </tr>
  
 }
