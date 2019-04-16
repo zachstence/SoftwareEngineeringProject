@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Entities", "Inven
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart.Entities", "ShoppingCart.Entities\ShoppingCart.Entities.csproj", "{D1576A3D-BE00-4B10-A41D-35A65BA923C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chicken.WebTests", "Chicken.WebTests\Chicken.WebTests.csproj", "{23D2540E-B189-4450-99CF-23767E1B2B3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D1576A3D-BE00-4B10-A41D-35A65BA923C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1576A3D-BE00-4B10-A41D-35A65BA923C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1576A3D-BE00-4B10-A41D-35A65BA923C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D2540E-B189-4450-99CF-23767E1B2B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D2540E-B189-4450-99CF-23767E1B2B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D2540E-B189-4450-99CF-23767E1B2B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D2540E-B189-4450-99CF-23767E1B2B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

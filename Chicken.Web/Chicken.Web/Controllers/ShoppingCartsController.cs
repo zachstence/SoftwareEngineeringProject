@@ -15,6 +15,7 @@ using ShoppingCart.Entities;
 
 namespace Chicken.Web.Controllers
 {
+    [Authorize]
     public class ShoppingCartsController : Controller
 
    
