@@ -1,0 +1,8 @@
+﻿a.logo
+{
+    background: url(../Images/Logo.png) no-repeat top left;
+    display: block;
+    width: 100%;
+    height: auto;
+    text-indent: -9999px; /* hides the link text */
+}
