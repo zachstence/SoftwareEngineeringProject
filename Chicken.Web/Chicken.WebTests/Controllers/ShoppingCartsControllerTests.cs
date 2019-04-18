@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using FakeHttpContext;
+using System.Web;
+using Moq;
 
 namespace Chicken.Web.Controllers.Tests
 {
@@ -14,13 +18,19 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void ReduceQuantityTest()
         {
-            Assert.Fail();
+            var invController = new InventoryController();
+            var cartController = new ShoppingCartsController();
+            invController.AddToCart(1);
+            var items = cartController.GetCartItems();
+            Console.WriteLine(items);
         }
 
         [TestMethod()]
-        public void IndexTest()
-        {
-            Assert.Fail();
+        public void IndexTest() {
+
+            var controller = new ShoppingCartsController();
+            var result = controller.Index() as ViewResult;
+            Assert.AreEqual("Index", result.ViewName);
         }
 
         [TestMethod()]
