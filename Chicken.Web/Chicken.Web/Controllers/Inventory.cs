@@ -25,13 +25,13 @@ namespace Chicken.Web.Controllers
         // GET
         public ActionResult Index()
         { 
-            return View(db.Inventory.ToList());
+            return View("Index", db.Inventory.ToList());
         }
 
 
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         [HttpPost]

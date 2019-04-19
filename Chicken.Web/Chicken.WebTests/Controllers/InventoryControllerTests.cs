@@ -5,12 +5,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chicken.WebTests;
+using System.Web.Mvc;
 
 namespace Chicken.Web.Controllers.Tests
 {
     [TestClass()]
     public class InventoryControllerTests
     {
+
+        static InventoryController controller;
+
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            controller = new InventoryController();
+            TestUtil.SetFakeControllerContext(controller);
+        }
+
+        [TestMethod()]
+        public void IndexTest()
+        {
+            var result = controller.Index() as ActionResult;
+            Console.WriteLine(result.ToString());
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Index", resultAsView.ViewName);
+        }
+
         [TestMethod()]
         public void AddToCartTest()
         {
@@ -20,19 +42,13 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void CreateTest()
         {
-            Assert.Fail();
+            
         }
 
 
 
         [TestMethod()]
         public void EditTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void IndexTest()
         {
             Assert.Fail();
         }

@@ -71,12 +71,6 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
-        public void DisposeTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void GetCartIdTest()
         {
             var result = controller.GetCartId();
@@ -85,6 +79,14 @@ namespace Chicken.Web.Controllers.Tests
 
         [TestMethod()]
         public void GetCartItemsTest()
+        {
+            var result = controller.GetCartItems();
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(List<CartItem>));
+        }
+
+        [TestMethod()]
+        public void DisposeTest()
         {
             Assert.Fail();
         }
