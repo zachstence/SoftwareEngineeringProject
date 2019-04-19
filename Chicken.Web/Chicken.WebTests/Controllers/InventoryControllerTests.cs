@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Chicken.WebTests;
 using System.Web.Mvc;
+using Chicken.Web.Models;
 
 namespace Chicken.Web.Controllers.Tests
 {
@@ -75,13 +76,16 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void GetCartIdTest()
         {
-            Assert.Fail();
+            var result = controller.GetCartId();
+            Assert.AreEqual("UnitTest", result);
         }
 
         [TestMethod()]
         public void GetCartItemsTest()
         {
-            Assert.Fail();
+            var result = controller.GetCartItems();
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(List<CartItem>));
         }
     }
 }
