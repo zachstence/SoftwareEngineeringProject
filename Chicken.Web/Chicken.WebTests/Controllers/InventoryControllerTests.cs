@@ -34,45 +34,22 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        public void CreateTest()
+        {
+            var result = controller.Create() as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Create", resultAsView.ViewName);
+        }
+
+        [TestMethod()]
         public void AddToCartTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void CreateTest()
-        {
-            
-        }
-
-
-
-        [TestMethod()]
         public void EditTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void CreateTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void CreateTest2()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void EditTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void EditTest2()
         {
             Assert.Fail();
         }
