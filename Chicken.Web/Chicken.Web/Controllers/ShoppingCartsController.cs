@@ -30,7 +30,7 @@ namespace Chicken.Web.Controllers
 
         public ActionResult Index()
         {
-            return View(GetCartItems());
+            return View("Index", GetCartItems());
         }
 
 
@@ -46,8 +46,6 @@ namespace Chicken.Web.Controllers
 
         public string GetCartId()
         {
-
-            Console.WriteLine(HttpContext == null);
             if (HttpContext.Session[CartSessionKey] == null)
             {
                 if (!string.IsNullOrWhiteSpace(HttpContext.User.Identity.Name))

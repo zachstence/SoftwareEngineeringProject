@@ -22,6 +22,8 @@ namespace Chicken.WebTests
             var session = new MockHttpSession();
             var server = new Mock<HttpServerUtilityBase>();
 
+            session["CartId"] = "UnitTest";
+
             context.Setup(ctx => ctx.Request).Returns(request.Object);
             context.Setup(ctx => ctx.Response).Returns(response.Object);
             context.Setup(ctx => ctx.Session).Returns(session);

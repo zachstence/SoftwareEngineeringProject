@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web;
 using Moq;
+using Chicken.WebTests;
 
 namespace Chicken.Web.Controllers.Tests
 {
@@ -15,24 +16,22 @@ namespace Chicken.Web.Controllers.Tests
     public class ShoppingCartsControllerTests
     {
 
+        static ShoppingCartsController controller;
+
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext) {
+            controller = new ShoppingCartsController();
+            TestUtil.SetFakeControllerContext(controller);
+        }
+
         [TestMethod()]
         public void ReduceQuantityTest()
         {
-            var invController = new InventoryController();
-            var cartController = new ShoppingCartsController();
-            invController.AddToCart(1);
-            var items = cartController.GetCartItems();
-            Console.WriteLine(items);
+
         }
 
         [TestMethod()]
         public void IndexTest() {
-
-
-            ShoppingCartsController controller = new ShoppingCartsController();
-            SetFakeControllerContext(controller);
-            controller.SetBusinessObject(mockBO.Object);
-
             var result = controller.Index() as ViewResult;
             Assert.AreEqual("Index", result.ViewName);
         }
@@ -46,7 +45,8 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void GetCartIdTest()
         {
-            Assert.Fail();
+            var result = controller.GetCartId();
+            Assert.AreEqual("UnitTest", result);
         }
 
         [TestMethod()]
