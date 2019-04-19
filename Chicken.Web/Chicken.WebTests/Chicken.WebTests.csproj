@@ -116,6 +116,10 @@
       <Project>{67485b37-2e7c-4068-af4f-af3dd88c16f1}</Project>
       <Name>Chicken.Web</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Inventory.Entities\Inventory.Entities.csproj">
+      <Project>{3301627e-2bfa-4b35-ac9f-a73d0a6ae16e}</Project>
+      <Name>Inventory.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
