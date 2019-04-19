@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using FakeHttpContext;
 using System.Web;
 using Moq;
 
@@ -15,6 +14,7 @@ namespace Chicken.Web.Controllers.Tests
     [TestClass()]
     public class ShoppingCartsControllerTests
     {
+
         [TestMethod()]
         public void ReduceQuantityTest()
         {
@@ -28,7 +28,11 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void IndexTest() {
 
-            var controller = new ShoppingCartsController();
+
+            ShoppingCartsController controller = new ShoppingCartsController();
+            SetFakeControllerContext(controller);
+            controller.SetBusinessObject(mockBO.Object);
+
             var result = controller.Index() as ViewResult;
             Assert.AreEqual("Index", result.ViewName);
         }

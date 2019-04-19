@@ -30,7 +30,7 @@
         </th>
         <th></th>
     </tr>
- 
+
 @foreach (var item in Model)
  {
     <tr>
@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
         }
-        
+
 
         @if (!User.IsInRole("Manager"))
         {
@@ -66,7 +66,7 @@
             </td>
         }
     </tr>
- 
+
 }
 
 </table>

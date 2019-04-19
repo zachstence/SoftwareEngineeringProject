@@ -11,6 +11,7 @@ using Chicken.Web.DataContexts;
 using Chicken.Web.Models;
 using Microsoft.AspNet.Identity;
 using ShoppingCart.Entities;
+using Moq;
 
 
 namespace Chicken.Web.Controllers
@@ -45,6 +46,8 @@ namespace Chicken.Web.Controllers
 
         public string GetCartId()
         {
+
+            Console.WriteLine(HttpContext == null);
             if (HttpContext.Session[CartSessionKey] == null)
             {
                 if (!string.IsNullOrWhiteSpace(HttpContext.User.Identity.Name))
