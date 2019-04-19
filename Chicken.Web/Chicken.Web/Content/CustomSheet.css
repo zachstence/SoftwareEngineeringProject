@@ -1,0 +1,20 @@
+﻿
+
+#main-paige-btn {
+    opacity: .75;
+    background-color: white;
+    color: black;
+    height: 50px;
+    vertical-align: middle;
+    padding: 13px
+}
+
+#main-paige-jumbotron-btn {
+    margin-top: 100px;
+    margin-left: 25px;
+}
+
+#main-paige-jumbotron {
+    height: 350px;
+    background-image: url('/Images/MainPaigeLinkBackground.jpg');
+}

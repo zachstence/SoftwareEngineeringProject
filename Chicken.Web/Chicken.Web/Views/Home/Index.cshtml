@@ -2,14 +2,21 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>GUS'S</h1>
-    <p class="lead"></p>
-    <p><a href="http://gusfriedchicken.com/" class="btn btn-primary btn-lg">Official Site&raquo;</a></p>
+<div id="main-paige-jumbotron" class="jumbotron">
+    <div  class="container-fluid">
+        <div class="row" >
+            <a id="main-paige-btn" href="http://gusfriedchicken.com/" class="btn btn-default">Go To Official Site&raquo;</a>
+        </div>
+    
+    </div>
 </div>
 
-<div class="row">
-    
+
+
+
+
+<div class="row" ">
+
     @if (!User.IsInRole("Manager"))
     {
         <div class="col-md-4">
@@ -33,7 +40,7 @@
         <div class="col-md-4">
             <h2>Inventory</h2>
             <p>Update Inventory of the Restaurant.</p>
-            <p><a class="btn btn-default" href="http://localhost:50975/Inventory">Inventory  &raquo;</a></p>
+            <p><a class="btn btn-default" href="http://localhost:50975/Inventory">Inventory &raquo;</a></p>
         </div>
     }
 </div>
