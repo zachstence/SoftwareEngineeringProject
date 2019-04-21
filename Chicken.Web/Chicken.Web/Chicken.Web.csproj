@@ -182,6 +182,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Inventory.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="customer.cs" />
     <Compile Include="DataContexts\BooksDb.cs" />
@@ -308,6 +309,11 @@
     <Content Include="Views\ShoppingCarts\Edit.cshtml" />
     <Content Include="Views\ShoppingCarts\Index.cshtml" />
     <Content Include="Views\Inventory\Edit.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
