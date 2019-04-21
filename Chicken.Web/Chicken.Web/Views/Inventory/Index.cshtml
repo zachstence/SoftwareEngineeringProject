@@ -30,34 +30,37 @@
         </th>
         <th></th>
     </tr>
- 
-@foreach (var item in Model)
- {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cost)
+@foreach (var item in Model )
+{
+    if (item.Quantity != 0 || User.IsInRole("Manager"))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
 
-        </td>
-        @if (User.IsInRole("Manager")) { 
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        }
-        <td>
-            @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
-        </td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
 
-        <td>
+            </td>
+            @if (User.IsInRole("Manager"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+            }
+            <td>
+                @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new {id = item.Id}, null)
+            </td>
 
-            @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
+            <td>
 
-        </td>
-    </tr>
- 
+                @Html.ActionLink("Edit", "Edit", "Inventory", new {id = item.Id}, null)
+
+            </td>
+        </tr>
+    }
 }
 
 </table>

@@ -95,15 +95,18 @@
             <td>
                 @Html.ActionLink("Remove From Cart", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
             </td>
-
-            <td>
-                @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-            </td>
-
-            <td>
-                @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-            </td>
-
+            @if (item.Quantity != 0)
+            {
+                <td>
+                    @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new {removeCartID = item.CartId, removeProductID = item.ProductId}, null)
+                </td>
+            }
+            @if (item.Product.Quantity != 0)
+            {
+                <td>
+                    @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new {removeCartID = item.CartId, removeProductID = item.ProductId}, null)
+                </td>
+            }
         </tr>
 
     }
