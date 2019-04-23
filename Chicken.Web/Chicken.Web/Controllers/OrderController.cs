@@ -35,16 +35,16 @@ namespace Chicken.Web.Controllers
             {
                 case "name_desc":
                     
-                    shoppingCartItems = shoppingCartItems.OrderByDescending(s => s.Product.Name);
+                    shoppingCartItems = shoppingCartItems.OrderBy(s => s.Product.Name);
                     break;
                 case "Date":
-                    shoppingCartItems = shoppingCartItems.OrderByDescending(s => s.Quantity);
+                    shoppingCartItems = shoppingCartItems.OrderBy(s => s.Quantity);
                     break;
                 case "date_desc":
-                    shoppingCartItems = shoppingCartItems.OrderByDescending(s => s.DateCreated);
+                    shoppingCartItems = shoppingCartItems.OrderBy(s => s.DateCreated);
                     break;
                 default:
-                    shoppingCartItems = shoppingCartItems.OrderByDescending(s => s.CartId);
+                    shoppingCartItems = shoppingCartItems.OrderBy(s => s.CartId);
 
                     break;
             }
