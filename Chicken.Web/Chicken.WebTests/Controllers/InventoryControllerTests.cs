@@ -28,7 +28,7 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            var result = controller.Index() as ActionResult;
+            var result = controller.Index("Dark") as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
             var resultAsView = result as ViewResult;
             Assert.AreEqual("Index", resultAsView.ViewName);

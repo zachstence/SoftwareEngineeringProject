@@ -35,7 +35,7 @@ namespace Chicken.Web.Controllers
 
 
 
-        public void Dispose()
+        public new void Dispose()
         {
             if (_db != null)
             {

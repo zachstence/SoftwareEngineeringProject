@@ -23,7 +23,7 @@ namespace Chicken.Web.Controllers
 
         public const string CartSessionKey = "CartId";
         // GET
-        public ActionResult Index(string sortOrder, string searchString)
+        public ActionResult Index(string searchString)
         {
           
             var inventoryItems = db.Inventory.ToList();
