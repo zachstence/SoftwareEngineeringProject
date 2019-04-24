@@ -76,7 +76,7 @@ namespace Chicken.Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(item);
+            return View("Edit", item);
         }
 
         // GET: Books/Delete/5

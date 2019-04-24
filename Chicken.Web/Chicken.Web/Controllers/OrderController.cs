@@ -48,7 +48,7 @@ namespace Chicken.Web.Controllers
 
                     break;
             }
-            return View(shoppingCartItems.ToList());
+            return View("Index", shoppingCartItems.ToList());
         }
 
         // GET: Order/Details/5
@@ -63,7 +63,7 @@ namespace Chicken.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(cartItem);
+            return View("Details", cartItem);
         }
 
         // GET: Order/Create
@@ -88,7 +88,7 @@ namespace Chicken.Web.Controllers
             }
 
             ViewBag.ProductId = new SelectList(db.Inventory, "Id", "Name", cartItem.ProductId);
-            return View(cartItem);
+            return View("Create", cartItem);
         }
 
         // GET: Order/Edit/5

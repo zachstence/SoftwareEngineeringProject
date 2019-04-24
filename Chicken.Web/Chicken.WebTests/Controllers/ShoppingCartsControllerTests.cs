@@ -12,6 +12,7 @@ using Chicken.WebTests;
 using Chicken.Web.DataContexts;
 using Chicken.Web.Models;
 using Inventory;
+using System.Data.Common;
 
 namespace Chicken.Web.Controllers.Tests
 {
@@ -20,8 +21,9 @@ namespace Chicken.Web.Controllers.Tests
     {
 
         static ShoppingCartsController controller;
+        //static InventoryDb db;
         static InventoryDb db;
-        static CartItem item;
+        static CartItem cartItem;
         static Inventory.Entities.Inventory invItem;
 
         [ClassInitialize()]
@@ -29,21 +31,19 @@ namespace Chicken.Web.Controllers.Tests
             controller = new ShoppingCartsController();
             TestUtil.SetFakeControllerContext(controller);
 
-            db = new InventoryDb();
-
             // Create test ivnentory and cart items
             invItem = new Inventory.Entities.Inventory
             {
-                Id = 1,
+                Id = 2,
                 Name = "Test Item",
                 Cost = 1,
                 Quantity = 1
             };
 
-            item = new CartItem
+            cartItem = new CartItem
             {
-                ItemId = Guid.NewGuid().ToString(),
-                ProductId = 1,
+                ItemId = "TestItemId",
+                ProductId = 2,
                 CartId = "UnitTest",
                 Product = invItem,
                 Quantity = 1,
@@ -51,17 +51,26 @@ namespace Chicken.Web.Controllers.Tests
             };
 
             
-
         }
 
         [TestMethod()]
         public void ReduceQuantityTest()
         {
-            var cartId = item.CartId;
-            var productId = item.ProductId;
 
-            controller.ReduceQuantity(cartId, productId);
+            var cartId = cartItem.CartId;
+            var productId = cartItem.Product.Id;
+            var before = cartItem.Product.Quantity;
 
+            try
+            {
+                controller.ReduceQuantity(cartId, productId);
+                var after = cartItem.Product.Quantity;
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Expected no exception but got" + e.Message);
+            }
+                
         }
 
         [TestMethod()]
@@ -86,27 +95,38 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
-        public void DisposeTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void RemoveItemTest()
         {
-            Assert.Fail();
-        }
+            var cartId = cartItem.CartId;
+            var productId = cartItem.Product.Id;
 
-        [TestMethod()]
-        public void ReduceQuantityTest1()
-        {
-            Assert.Fail();
+            try
+            {
+                controller.RemoveItem(cartId, productId);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Expected no exception but got" + e.Message);
+            }
         }
 
         [TestMethod()]
         public void IncreaseQuantityTest()
         {
-            Assert.Fail();
+            var cartId = cartItem.CartId;
+            var productId = cartItem.Product.Id;
+            var before = cartItem.Product.Quantity;
+
+            try
+            {
+                controller.IncreaseQuantity(cartId, productId);
+                var after = cartItem.Product.Quantity;
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Expected no exception but got" + e.Message);
+            }
+
         }
     }
 }

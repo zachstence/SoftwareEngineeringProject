@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Chicken.WebTests;
 using System.Web.Mvc;
+using System.Net;
 using Chicken.Web.Models;
 
 namespace Chicken.Web.Controllers.Tests
@@ -28,7 +29,6 @@ namespace Chicken.Web.Controllers.Tests
         public void IndexTest()
         {
             var result = controller.Index() as ActionResult;
-            Console.WriteLine(result.ToString());
             Assert.IsInstanceOfType(result, typeof(ViewResult));
             var resultAsView = result as ViewResult;
             Assert.AreEqual("Index", resultAsView.ViewName);
@@ -43,35 +43,62 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual("Create", resultAsView.ViewName);
         }
 
+        /*
         [TestMethod()]
         public void AddToCartTest()
         {
-            Assert.Fail();
+            int id = 2;
+            var result = controller.AddToCart(id) as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Index", resultAsView.ViewName);
+            var items = controller.GetCartItems();
+            Console.WriteLine(items);
         }
+        */
 
+        /*
         [TestMethod()]
         public void EditTest()
         {
-            Assert.Fail();
+            Inventory.Entities.Inventory invItem = new Inventory.Entities.Inventory();
+            var result = controller.Edit(invItem) as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Edit", resultAsView.ViewName);
+            var model = resultAsView.Model;
+            Assert.IsInstanceOfType(model, typeof(Inventory.Entities.Inventory));
+        }
+        */
+
+        [TestMethod()]
+        public void DeleteNullTest()
+        {
+            var result = controller.Delete(null);
+            Assert.IsInstanceOfType(result, typeof(HttpStatusCodeResult));
+            var code = result as HttpStatusCodeResult;
+            Assert.AreEqual((int) HttpStatusCode.BadRequest, code.StatusCode);
         }
 
+        /*
         [TestMethod()]
         public void DeleteTest()
         {
-            Assert.Fail();
-        }
 
+        }
+        */
+
+        /*
         [TestMethod()]
         public void DeleteConfirmedTest()
         {
-            Assert.Fail();
+            int id = 2;
+            var result = controller.DeleteConfirmed(id) as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Index", resultAsView.ViewName);
         }
-
-        [TestMethod()]
-        public void AddToCartTest1()
-        {
-            Assert.Fail();
-        }
+        */
 
         [TestMethod()]
         public void GetCartIdTest()
