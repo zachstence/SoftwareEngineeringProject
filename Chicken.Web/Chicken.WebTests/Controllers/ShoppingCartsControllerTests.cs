@@ -21,8 +21,8 @@ namespace Chicken.Web.Controllers.Tests
     {
 
         static ShoppingCartsController controller;
-        //static InventoryDb db;
        
+        static InventoryDb db;
         static CartItem cartItem;
         static Inventory.Entities.Inventory invItem;
 
