@@ -212,9 +212,9 @@
     <Compile Include="DataContexts\InventoryMigrations\201904100253135_UpdateCart.Designer.cs">
       <DependentUpon>201904100253135_UpdateCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContexts\InventoryMigrations\201904100319500_Product.cs" />
-    <Compile Include="DataContexts\InventoryMigrations\201904100319500_Product.Designer.cs">
-      <DependentUpon>201904100319500_Product.cs</DependentUpon>
+    <Compile Include="DataContexts\InventoryMigrations\201904251800567_ACat.cs" />
+    <Compile Include="DataContexts\InventoryMigrations\201904251800567_ACat.Designer.cs">
+      <DependentUpon>201904251800567_ACat.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\InventoryMigrations\Configuration.cs" />
     <Compile Include="DataContexts\ShoppingCartDb.cs" />
@@ -346,8 +346,8 @@
     <EmbeddedResource Include="DataContexts\InventoryMigrations\201904100253135_UpdateCart.resx">
       <DependentUpon>201904100253135_UpdateCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\InventoryMigrations\201904100319500_Product.resx">
-      <DependentUpon>201904100319500_Product.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\InventoryMigrations\201904251800567_ACat.resx">
+      <DependentUpon>201904251800567_ACat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\ShoppingCartMigrations\201904092059402_InitialCreate.resx">
       <DependentUpon>201904092059402_InitialCreate.cs</DependentUpon>

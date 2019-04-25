@@ -16,10 +16,11 @@
 @using (Html.BeginForm())
 { 
 <p>
-    Find by name: @Html.TextBox("SearchString")
+    Find Menu Items: @Html.TextBox("SearchString")
     <input type="submit" value="Search" />
 </p>
 }
+
 
 <table class="table">
     <tr>
@@ -29,14 +30,18 @@
 
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+      
+        <th>
             @Html.DisplayNameFor(model => model.Cost)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-
-        </th>
+        @if (User.IsInRole("Manager"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+        }
         <th></th>
     </tr>
  
@@ -46,7 +51,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
 
-                </td>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+
+        </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)
 

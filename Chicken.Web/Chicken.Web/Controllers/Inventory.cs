@@ -26,12 +26,12 @@ namespace Chicken.Web.Controllers
         public ActionResult Index(string searchString)
         {
           
-            var inventoryItems = db.Inventory.ToList();
+            var inventoryItems = db.Inventory.OrderBy(x => x.Category).ToList();
 
             // search bar 
             if (!String.IsNullOrEmpty(searchString))
             {
-                inventoryItems = db.Inventory.Where(s =>  s.Name.Contains(searchString)).ToList();
+                inventoryItems = db.Inventory.Where(s =>  s.Name.Contains(searchString) || s.Category.Contains(searchString)).OrderBy(x =>x.Name).ToList() ;
             }
 
             return View("Index", inventoryItems);
@@ -45,7 +45,7 @@ namespace Chicken.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Manager")]
-        public ActionResult Create([Bind(Include = "Id,Name,Cost,Quantity")] Inventory.Entities.Inventory item)
+        public ActionResult Create([Bind(Include = "Id,Name,Cost,Quantity,Category")] Inventory.Entities.Inventory item)
         {           
                 if (ModelState.IsValid)
                 {
@@ -76,7 +76,7 @@ namespace Chicken.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Cost,Quantity")] Inventory.Entities.Inventory item)
+        public ActionResult Edit([Bind(Include = "Id,Name,Cost,Quantity,Category")] Inventory.Entities.Inventory item)
         {
             if (ModelState.IsValid)
             {
