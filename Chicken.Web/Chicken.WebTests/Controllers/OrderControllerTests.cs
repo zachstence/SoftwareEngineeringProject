@@ -41,13 +41,7 @@ namespace Chicken.Web.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
-        /*
-        [TestMethod()]
-        public void DetailsFoundTest()
-        {
-
-        }
-        */
+      
 
         [TestMethod()]
         public void EditNotFoundTest()
@@ -57,13 +51,7 @@ namespace Chicken.Web.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
-        /*
-        [TestMethod()]
-        public void EditFoundTest()
-        {
-
-        }
-        */
+      
 
         [TestMethod()]
         public void DeleteNotFoundTest()
@@ -73,13 +61,7 @@ namespace Chicken.Web.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
-        /*
-        [TestMethod()]
-        public void DeleteFoundTest()
-        {
-
-        }
-        */
+      
 
         [TestMethod()]
         [ExpectedException(typeof(System.ArgumentNullException))]

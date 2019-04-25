@@ -2,12 +2,14 @@
 using Chicken.Web.Controllers;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Chicken.WebTests;
 using System.Web.Mvc;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using Chicken.Web.Models;
 
 namespace Chicken.Web.Controllers.Tests
@@ -28,7 +30,7 @@ namespace Chicken.Web.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            var result = controller.Index() as ActionResult;
+            var result = controller.Index(searchString:"UnitTest") as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
             var resultAsView = result as ViewResult;
             Assert.AreEqual("Index", resultAsView.ViewName);
@@ -43,34 +45,7 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual("Create", resultAsView.ViewName);
         }
 
-        /*
-        [TestMethod()]
-        public void AddToCartTest()
-        {
-            int id = 2;
-            var result = controller.AddToCart(id) as ActionResult;
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Index", resultAsView.ViewName);
-            var items = controller.GetCartItems();
-            Console.WriteLine(items);
-        }
-        */
-
-        /*
-        [TestMethod()]
-        public void EditTest()
-        {
-            Inventory.Entities.Inventory invItem = new Inventory.Entities.Inventory();
-            var result = controller.Edit(invItem) as ActionResult;
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Edit", resultAsView.ViewName);
-            var model = resultAsView.Model;
-            Assert.IsInstanceOfType(model, typeof(Inventory.Entities.Inventory));
-        }
-        */
-
+       
         [TestMethod()]
         public void DeleteNullTest()
         {
@@ -80,25 +55,7 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual((int) HttpStatusCode.BadRequest, code.StatusCode);
         }
 
-        /*
-        [TestMethod()]
-        public void DeleteTest()
-        {
-
-        }
-        */
-
-        /*
-        [TestMethod()]
-        public void DeleteConfirmedTest()
-        {
-            int id = 2;
-            var result = controller.DeleteConfirmed(id) as ActionResult;
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Index", resultAsView.ViewName);
-        }
-        */
+      
 
         [TestMethod()]
         public void GetCartIdTest()
