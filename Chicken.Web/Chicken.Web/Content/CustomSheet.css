@@ -1,11 +1,4 @@
-﻿/*#main-paige-btn {
-    opacity: .75;
-    background-color: white;
-    color: black;
-    height: 50px;
-    vertical-align: middle;
-    padding: 13px
-}*/
+﻿
 #main-paige-btn {
     color: white;
     height: 50px;
@@ -23,6 +16,16 @@
 
 .page-title-header {
     background: url('/Images/Graphics1.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+.shopping-cart-page-title-header {
+    background: url('/Images/Graphic3.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+.orders-page-title-header {
+    background: url('/Images/Graphic4.jpg') no-repeat center center;
     background-size: 100% auto;
 }
 
