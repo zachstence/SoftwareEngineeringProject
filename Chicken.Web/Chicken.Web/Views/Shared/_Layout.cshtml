@@ -39,6 +39,10 @@
                     }
 
                     <li>@Html.ActionLink("Cart", "Index", "ShoppingCarts")</li>
+                    @if (User.IsInRole("Manager") || User.IsInRole("Admin") || User.IsInRole("Employee"))
+                    {
+                        <li>@Html.ActionLink("Orders", "Index", "Order")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -48,7 +52,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Gus's Fried Chicken </p>
         </footer>
     </div>
 

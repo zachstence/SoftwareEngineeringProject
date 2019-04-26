@@ -11,10 +11,12 @@ using Chicken.Web.DataContexts;
 using Chicken.Web.Models;
 using Microsoft.AspNet.Identity;
 using ShoppingCart.Entities;
+using Moq;
 
 
 namespace Chicken.Web.Controllers
 {
+    [Authorize]
     public class ShoppingCartsController : Controller
 
    
@@ -28,12 +30,12 @@ namespace Chicken.Web.Controllers
 
         public ActionResult Index()
         {
-            return View(GetCartItems());
+            return View("Index", GetCartItems());
         }
 
 
 
-        public void Dispose()
+        public new void Dispose()
         {
             if (_db != null)
             {

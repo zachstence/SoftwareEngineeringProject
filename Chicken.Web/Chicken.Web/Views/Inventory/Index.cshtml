@@ -5,101 +5,24 @@
     ViewBag.Title = "Index";
 }
 
-<div class="jumbotron page-title-header">
-    <h1><span class="menu-header-text">Menu</span></h1>
-</div>
-
+<h2>Menu</h2>
 @if (User.IsInRole("Manager"))
 {
-    <p class="btn btn-default" style="margin-bottom: 10px;">
+    <p>
         @Html.ActionLink("Create New", "Create")
     </p>
 }
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-xs-3">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Name)
-                </h4>
-            </div>
-            <div class="col-md-3 col-xs-3">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Cost)
-                </h4>
-            </div>
-            <div class="col-md-3 col-xs-3">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Quantity)
-                </h4>
-            </div>
-
-        </div>
-
-        @foreach (var item in Model)
-        {
-            if (item.Quantity != 0 || User.IsInRole("Manager"))
-            {
-                <div class="row">
-                    <div class="col-md-3 col-xs-3">
-                        <p>
-                            @Html.DisplayFor(modelItem => item.Name)
-
-                        </p>
-                    </div>
-                    <div class="col-md-3 col-xs-3">
-                        <p>$
-                            @Html.DisplayFor(modelItem => item.Cost)
-
-                        </p>
-                    </div>
-                    
-                    @if (User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-3 col-xs-3">
-                            <p>
-                                @Html.DisplayFor(modelItem => item.Quantity)
-
-                            </p>
-                        </div>
-
-                    }
+@using (Html.BeginForm())
+{ 
+<p>
+    Find Menu Items: @Html.TextBox("SearchString")
+    <input type="submit" value="Search" />
+</p>
+}
 
 
-                    @if (!User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-3 col-xs-3">
-                            <p>
-                                <span class="btn btn-default">
-                                    @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
-                                </span>
-
-                            </p>
-                        </div>
-
-                    }
-
-                    @if (User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-3 col-xs-3">
-                            <p>
-                                <span class="btn btn-default">
-                                    @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
-                                </span>
-                            </p>
-                        </div>
-
-                    }
-                </div>
-
-            }
-
-        }
-
-    </div>
-
-
-@*<table class="table">
+<table class="table">
     <tr>
 
         <th>
@@ -107,37 +30,43 @@
 
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+      
+        <th>
             @Html.DisplayNameFor(model => model.Cost)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-
-        </th>
+        @if (User.IsInRole("Manager"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+        }
         <th></th>
     </tr>
+ 
+@foreach (var item in Model)
+ {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
 
-    @foreach (var item in Model)
-    {
-        if (item.Quantity != 0 || User.IsInRole("Manager"))
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
 
-                </td>
+        </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)
 
-                </td>
-                @if (User.IsInRole("Manager"))
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                    </td>
-                }
-
+        </td>
+        @if (User.IsInRole("Manager"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+        }
+        
 
                 @if (!User.IsInRole("Manager"))
                 {
@@ -152,10 +81,10 @@
 
                         @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
 
-                    </td>
-                }
-            </tr>
+            </td>
         }
-    }
+    </tr>
+ 
+}
 
-</table>*@
+</table>
