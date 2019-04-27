@@ -39,6 +39,11 @@
                     }
 
                     <li>@Html.ActionLink("Cart", "Index", "ShoppingCarts")</li>
+                    @*<li>
+                   
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" href="@Url.Action("Index", "ShoppingCarts")"></span>
+                    </li>*@
+
                     @if (User.IsInRole("Manager") || User.IsInRole("Admin") || User.IsInRole("Employee"))
                     {
                         <li>@Html.ActionLink("Orders", "Index", "Order")</li>
