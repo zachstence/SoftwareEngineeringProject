@@ -6,7 +6,9 @@
         ViewBag.Title = "Index";
     }
 
-    <h2>Index</h2>
+    <div class="jumbotron orders-page-title-header">
+        <h1><span class="menu-header-text">Orders</span></h1>
+    </div>
 
 
 
@@ -17,7 +19,84 @@
             <input type="submit" value="Search" />
         </p>
     }
-    <table class="table">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-xs-2">
+                    <h4 class="menu-label-text" style="color: black">
+                        @Html.ActionLink("Order Item", "Index", new { sortOrder = ViewBag.NameSortParm })
+                   </h4>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <h4 class="menu-label-text">
+                        @Html.ActionLink("Order Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                    </h4>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <h4 class="menu-label-text">
+                        @Html.ActionLink("Quantity", "Index", new { sortOrder = ViewBag.NameSortParm })
+                    </h4>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <h4 class="menu-label-text">
+                        @Html.ActionLink("Date Created", "Index", new { sortOrder = ViewBag.DateSortParm })
+                    </h4>
+                </div>
+            </div>
+           
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    <div class="col-md-2 col-xs-2">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.CartId)
+
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.DateCreated)
+
+                        </p>
+                    </div>
+                    <div class="col-md-1 col-xs-1">
+                        <p>
+                            <span class="btn btn-default">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId })
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-1 col-xs-1">
+                        <p>
+                            <span class="btn btn-default">
+                                @Html.ActionLink("Details", "Details", new { id = item.ItemId })
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-1 col-xs-1">
+                        <p>
+                            <span class="btn btn-default">
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId })
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                
+            }
+        </div>
+    @*<table class="table">
         <tr>
             <th>
                 @Html.ActionLink("Order Item", "Index", new { sortOrder = ViewBag.NameSortParm })
@@ -60,7 +139,7 @@
             </tr>
         }
 
-    </table>
+    </table>*@
 }
 else
 {

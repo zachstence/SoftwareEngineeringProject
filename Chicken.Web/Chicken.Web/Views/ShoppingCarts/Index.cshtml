@@ -6,97 +6,133 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Menu</h2>
+<div class="jumbotron shopping-cart-page-title-header">
+    <h1><span class="menu-header-text">Shopping Cart</span></h1>
+</div>
 
-<table class="table">
 
-
-
-    <table class="table">
-        <tr>
-
-            <th>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
                 @Html.DisplayNameFor(model => model.Product.Name)
-
-            </th>
-            <th>
+            </h4>
+        </div>
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
                 @Html.DisplayNameFor(model => model.DateCreated)
-
-            </th>
-
-            <th>
+            </h4>
+        </div>
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
                 @Html.DisplayNameFor(model => model.Product.Name)
-            </th>
-            <th>
-
+            </h4>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <h4 class="menu-label-text">
                 @Html.DisplayNameFor(model => model.Quantity)
-
-            </th>
-
-            <th>
-
+            </h4>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <h4 class="menu-label-text">
                 @Html.DisplayNameFor(model => model.Product.Cost)
-
-            </th>
-
-            <th>
-
+            </h4>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <h4 class="menu-label-text">
                 Total
-
-            </th>
-
-            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
-            {
-                <th>
-
+            </h4>
+        </div>
+        @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+        {
+            <div class="col-md-1 col-xs-1">
+                <h4 class="menu-label-text">
                     Inventory
-
-                </th>
-            }
-
-            <th></th>
-        </tr>
-
+                </h4>
+            </div>
+        }
+    </div>
+    
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CartId)
-
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Name)
-
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Cost)
-
-            </td>
-
-            <td>
-                @(item.Quantity * item.Product.Cost)
-
-            </td>
-
-
+        <div class="row">
+            <div class="col-md-2 col-xs-2">
+                <p>
+                    @Html.DisplayFor(modelItem => item.CartId)
+                </p>
+            </div>
+            <div class="col-md-2 col-xs-2">
+                <p>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </p>
+            </div>
+            <div class="col-md-2 col-xs-2">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </p>
+            </div>
+            <div class="col-md-1 col-xs-1">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </p>
+            </div>
+            <div class="col-md-1 col-xs-1">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Product.Cost)
+                </p>
+            </div>
+            <div class="col-md-1 col-xs-1">
+                <p>
+                    @(item.Quantity * item.Product.Cost)
+                </p>
+            </div>
             @if (User.IsInRole("Manager")|| User.IsInRole("Employee"))
             {
-                <td>
-                    @(item.Product.Quantity)
-
-                </td>
+                <div class="col-md-1 col-xs-1">
+                    <p>
+                        @(item.Product.Quantity)
+                    </p>
+                </div>
             }
+            <div class="col-md-1 col-xs-1">
+                <p>
+                        
+                    @Html.ActionLink("Remove", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                        
+
+                </p>
+               
+            </div>
+            <div class="col-md-1 col-xs-1">
+                @if (item.Quantity != 0)
+                    {
+                        <p>
+                       
+                                @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                           
+
+                        </p>
+                    }
+                    @if (item.Product.Quantity != 0)
+                    {
+                        <p>
+                      
+                                @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                           
+
+                        </p>
+                    }
+            </div>
+            
+
+        </div>
+
+    }
+</div>
+
+
+@*
+   
 
             <td>
                 @Html.ActionLink("Remove From Cart", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
@@ -118,4 +154,4 @@
     }
 
 
-</table>
+</table>*@

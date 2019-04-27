@@ -1,20 +1,48 @@
 ﻿
-
 #main-paige-btn {
-    opacity: .75;
-    background-color: white;
-    color: black;
+    color: white;
     height: 50px;
     vertical-align: middle;
-    padding: 13px
-}
-
-#main-paige-jumbotron-btn {
-    margin-top: 100px;
-    margin-left: 25px;
+    padding: 13px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: white;
 }
 
 #main-paige-jumbotron {
     height: 350px;
     background-image: url('/Images/MainPaigeLinkBackground.jpg');
 }
+
+.page-title-header {
+    background: url('/Images/Graphics1.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+.shopping-cart-page-title-header {
+    background: url('/Images/Graphic3.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+.orders-page-title-header {
+    background: url('/Images/Graphic4.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+.menu-header-text {
+    color: black;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    font-weight: bold;
+
+
+}
+
+
+.menu-label-text {
+    color: black;
+    font-weight: bold;
+}
+
+
