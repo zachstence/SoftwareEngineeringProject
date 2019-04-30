@@ -28,6 +28,13 @@ namespace Chicken.Web.Controllers
 
         public const string CartSessionKey = "CartId";
 
+        public ShoppingCartsController() { }
+
+        public ShoppingCartsController(InventoryDb db)
+        {
+            this._db = db;
+        }
+
         public ActionResult Index()
         {
             return View("Index", GetCartItems());
@@ -101,8 +108,6 @@ namespace Chicken.Web.Controllers
         {
             // using (var _db = new WingtipToys.Models.ProductContext())
 
-            using (var _db = new InventoryDb())
-            {
                 try
                 {
                     var myItem = (from item in _db.ShoppingCartItems where item.CartId == removeCartID && item.Product.Id == removeProductID select item).FirstOrDefault();
@@ -113,23 +118,22 @@ namespace Chicken.Web.Controllers
                         myItem.Product.Quantity++;
                         
                         _db.SaveChanges();
+
                     }
+                return RedirectToAction("Index", myItem);
+
                 }
                 catch (Exception exp)
                 {
                     throw new Exception("ERROR: Unable to Remove Cart Item - " + exp.Message.ToString(), exp);
                 }
-            }
 
-            return RedirectToAction("Index");
         }
 
         public ActionResult IncreaseQuantity(string removeCartID, int removeProductID)
         {
           
 
-            using (var _db = new InventoryDb())
-            {
                 try
                 {
                     var myItem = (from item in _db.ShoppingCartItems where item.CartId == removeCartID && item.Product.Id == removeProductID select item).FirstOrDefault();
@@ -140,6 +144,8 @@ namespace Chicken.Web.Controllers
                         myItem.Product.Quantity--;
                         _db.SaveChanges();
                     }
+                    return RedirectToAction("Index", myItem);
+
                 }
                 catch (Exception exp)
                 {
@@ -147,8 +153,6 @@ namespace Chicken.Web.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
-        }
 
     }
    

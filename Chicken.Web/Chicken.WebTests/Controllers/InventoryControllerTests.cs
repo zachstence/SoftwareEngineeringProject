@@ -81,7 +81,6 @@ namespace Chicken.Web.Controllers.Tests
         public void AddToCartTest()
         {
             int id = 1;
-
             int beforeQuantity = cartItem.Quantity;
 
             var result = controller.AddToCart(id) as ActionResult;
@@ -96,23 +95,41 @@ namespace Chicken.Web.Controllers.Tests
 
             object quantity;
             dict.TryGetValue("Quantity", out quantity);
-
             Assert.AreEqual(beforeQuantity + 1, quantity);
         }
 
-        /*
         [TestMethod()]
         public void EditTest()
         {
-            Inventory.Entities.Inventory invItem = new Inventory.Entities.Inventory();
-            var result = controller.Edit(invItem) as ActionResult;
+            int id = 1;
+            var result = controller.Edit(id) as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
+
             var resultAsView = result as ViewResult;
             Assert.AreEqual("Edit", resultAsView.ViewName);
+
             var model = resultAsView.Model;
             Assert.IsInstanceOfType(model, typeof(Inventory.Entities.Inventory));
+
         }
-        */
+
+        [TestMethod()]
+        public void EditNullTest()
+        {
+            int? id = null;
+            var result = controller.Edit(id);
+            Assert.IsInstanceOfType(result, typeof(HttpStatusCodeResult));
+            var code = result as HttpStatusCodeResult;
+            Assert.AreEqual((int)HttpStatusCode.BadRequest, code.StatusCode);
+        }
+
+        [TestMethod()]
+        public void EditNotFoundTest()
+        {
+            int id = -1;
+            var result = controller.Edit(id) as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+        }
 
         [TestMethod()]
         public void DeleteNullTest()
@@ -123,25 +140,29 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual((int) HttpStatusCode.BadRequest, code.StatusCode);
         }
 
-        /*
         [TestMethod()]
         public void DeleteTest()
         {
+            int id = 1;
+            var result = controller.Delete(id) as ActionResult;
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
 
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Delete", resultAsView.ViewName);
+
+            var model = resultAsView.Model;
+            Assert.IsInstanceOfType(model, typeof(Inventory.Entities.Inventory));
         }
-        */
 
-        /*
         [TestMethod()]
         public void DeleteConfirmedTest()
         {
-            int id = 2;
+            int id = 1;
             var result = controller.DeleteConfirmed(id) as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
             var resultAsView = result as ViewResult;
             Assert.AreEqual("Index", resultAsView.ViewName);
         }
-        */
 
         [TestMethod()]
         public void GetCartIdTest()

@@ -66,7 +66,7 @@ namespace Chicken.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View("Edit", item);
         }
 
         // POST: Books/Edit/5
@@ -97,7 +97,7 @@ namespace Chicken.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View("Delete", item);
         }
 
         // POST: Books/Delete/5
