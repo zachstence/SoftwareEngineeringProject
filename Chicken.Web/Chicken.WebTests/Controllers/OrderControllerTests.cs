@@ -42,29 +42,12 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
-        public void DetailsFoundTest()
-        {
-            var result = controller.Details("2");
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Details", resultAsView.ViewName);
-        }
-
-        [TestMethod()]
         public void EditNotFoundTest()
         {
             // Should get HttpNotFoundResult with a bad item id
             var result = controller.Edit("") as ActionResult;
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
-
-        /*
-        [TestMethod()]
-        public void EditFoundTest()
-        {
-
-        }
-        */
 
         [TestMethod()]
         public void DeleteNotFoundTest()
@@ -73,14 +56,6 @@ namespace Chicken.Web.Controllers.Tests
             var result = controller.Delete("") as ActionResult;
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
-
-        /*
-        [TestMethod()]
-        public void DeleteFoundTest()
-        {
-
-        }
-        */
 
         [TestMethod()]
         [ExpectedException(typeof(System.ArgumentNullException))]

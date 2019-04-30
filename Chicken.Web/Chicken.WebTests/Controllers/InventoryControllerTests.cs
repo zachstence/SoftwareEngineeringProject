@@ -159,9 +159,12 @@ namespace Chicken.Web.Controllers.Tests
         {
             int id = 1;
             var result = controller.DeleteConfirmed(id) as ActionResult;
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Index", resultAsView.ViewName);
+            var resultAsredirectToRouteResult = result as RedirectToRouteResult;
+            var dict = resultAsredirectToRouteResult.RouteValues;
+
+            object actionName;
+            dict.TryGetValue("action", out actionName);
+            Assert.AreEqual("Index", actionName);
         }
 
         [TestMethod()]

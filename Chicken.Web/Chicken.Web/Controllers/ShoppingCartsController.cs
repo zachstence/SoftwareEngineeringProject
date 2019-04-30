@@ -120,7 +120,7 @@ namespace Chicken.Web.Controllers
                         _db.SaveChanges();
 
                     }
-                return RedirectToAction("Index", myItem);
+                    return RedirectToAction("Index", myItem);
 
                 }
                 catch (Exception exp)

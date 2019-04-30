@@ -48,12 +48,13 @@ namespace Chicken.Web.Controllers.Tests
                 DateCreated = DateTime.Now
             };
 
+            db.Inventory.Add(invItem);
+
             var ci = db.ShoppingCartItems.SingleOrDefault(
                 c => c.CartId == "UnitTest"
-                 && c.ProductId == 1);
+                && c.ProductId == 1);
             ci.Quantity = 1;
 
-            db.Inventory.Add(invItem);
             //db.ShoppingCartItems.Add(cartItem);
 
             controller = new ShoppingCartsController(db);
@@ -107,21 +108,6 @@ namespace Chicken.Web.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(List<CartItem>));
         }
 
-        [TestMethod()]
-        public void RemoveItemTest()
-        {
-            var cartId = cartItem.CartId;
-            var productId = cartItem.Product.Id;
-
-            try
-            {
-                controller.RemoveItem(cartId, productId);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Expected no exception but got" + e.Message);
-            }
-        }
 
         [TestMethod()]
         public void IncreaseQuantityTest()
@@ -146,5 +132,6 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual(beforeQuantity + 1, quantity);
 
         }
+
     }
 }
