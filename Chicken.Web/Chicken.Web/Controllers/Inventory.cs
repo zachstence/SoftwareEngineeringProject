@@ -19,9 +19,15 @@ namespace Chicken.Web.Controllers
 
         public string ShoppingCartId { get; set; }
 
-        private InventoryDb _db = new InventoryDb();
-
         public const string CartSessionKey = "CartId";
+
+        public InventoryController() { }
+
+        public InventoryController(InventoryDb db)
+        {
+            this.db = db;
+        }
+
         // GET
         public ActionResult Index()
         { 
@@ -114,13 +120,12 @@ namespace Chicken.Web.Controllers
             base.Dispose(disposing);
         }
 
-
         public ActionResult AddToCart(int id)
         {
             // Retrieve the product from the database.           
             ShoppingCartId = GetCartId();
 
-            var cartItem = _db.ShoppingCartItems.SingleOrDefault(
+            var cartItem = db.ShoppingCartItems.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
                      && c.ProductId == id);
             if (cartItem == null)
@@ -131,13 +136,13 @@ namespace Chicken.Web.Controllers
                     ItemId = Guid.NewGuid().ToString(),
                     ProductId = id,
                     CartId = ShoppingCartId,
-                    Product = _db.Inventory.SingleOrDefault(
+                    Product = db.Inventory.SingleOrDefault(
                         p => p.Id == id),
                     Quantity = 1,
                     DateCreated = DateTime.Now
                 };
 
-                _db.ShoppingCartItems.Add(cartItem);
+                db.ShoppingCartItems.Add(cartItem);
                 cartItem.Product.Quantity--;
 
             }
@@ -148,11 +153,12 @@ namespace Chicken.Web.Controllers
                 cartItem.Quantity++;
                 cartItem.Product.Quantity--;
             }
-            _db.SaveChanges();
+            db.SaveChanges();
 
             var Chicken = GetCartItems();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", cartItem);
+
         }
 
         public string GetCartId()
@@ -177,7 +183,7 @@ namespace Chicken.Web.Controllers
         {
             ShoppingCartId = GetCartId();
 
-            return _db.ShoppingCartItems.Where(
+            return db.ShoppingCartItems.Where(
                 c => c.CartId == ShoppingCartId).ToList();
         }
 

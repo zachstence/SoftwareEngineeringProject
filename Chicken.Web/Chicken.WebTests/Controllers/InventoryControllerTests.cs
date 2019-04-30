@@ -9,6 +9,7 @@ using Chicken.WebTests;
 using System.Web.Mvc;
 using System.Net;
 using Chicken.Web.Models;
+using Chicken.Web.DataContexts;
 
 namespace Chicken.Web.Controllers.Tests
 {
@@ -17,12 +18,45 @@ namespace Chicken.Web.Controllers.Tests
     {
 
         static InventoryController controller;
+        static InventoryDb db;
+        static CartItem cartItem;
+        static Inventory.Entities.Inventory invItem;
 
-        [ClassInitialize()]
-        public static void MyClassInitialize(TestContext testContext)
+        [TestInitialize()]
+        public void TestInitialize()
         {
-            controller = new InventoryController();
+
+            db = new InventoryDb();
+
+            invItem = new Inventory.Entities.Inventory
+            {
+                Id = 1,
+                Name = "Test Item",
+                Cost = 1,
+                Quantity = 1
+            };
+
+            cartItem = new CartItem
+            {
+                ItemId = "TestItemId",
+                ProductId = 1,
+                CartId = "UnitTest",
+                Product = invItem,
+                Quantity = 1,
+                DateCreated = DateTime.Now
+            };
+
+            var ci = db.ShoppingCartItems.SingleOrDefault(
+                c => c.CartId == "UnitTest"
+                 && c.ProductId == 1);
+            ci.Quantity = 1;
+
+            db.Inventory.Add(invItem);
+            //db.ShoppingCartItems.Add(cartItem);
+
+            controller = new InventoryController(db);
             TestUtil.SetFakeControllerContext(controller);
+
         }
 
         [TestMethod()]
@@ -43,19 +77,28 @@ namespace Chicken.Web.Controllers.Tests
             Assert.AreEqual("Create", resultAsView.ViewName);
         }
 
-        /*
         [TestMethod()]
         public void AddToCartTest()
         {
-            int id = 2;
+            int id = 1;
+
+            int beforeQuantity = cartItem.Quantity;
+
             var result = controller.AddToCart(id) as ActionResult;
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            var resultAsView = result as ViewResult;
-            Assert.AreEqual("Index", resultAsView.ViewName);
-            var items = controller.GetCartItems();
-            Console.WriteLine(items);
+            Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+
+            var resultAsredirectToRouteResult = result as RedirectToRouteResult;
+            var dict = resultAsredirectToRouteResult.RouteValues;
+
+            object actionName;
+            dict.TryGetValue("action", out actionName);
+            Assert.AreEqual("Index", actionName);
+
+            object quantity;
+            dict.TryGetValue("Quantity", out quantity);
+
+            Assert.AreEqual(beforeQuantity + 1, quantity);
         }
-        */
 
         /*
         [TestMethod()]

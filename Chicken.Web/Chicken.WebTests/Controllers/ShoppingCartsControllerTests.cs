@@ -31,7 +31,7 @@ namespace Chicken.Web.Controllers.Tests
             controller = new ShoppingCartsController();
             TestUtil.SetFakeControllerContext(controller);
 
-            // Create test ivnentory and cart items
+            // Create test iventory and cart items
             invItem = new Inventory.Entities.Inventory
             {
                 Id = 2,

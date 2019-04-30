@@ -21,7 +21,7 @@ namespace Chicken.Web.Controllers.Tests
         public static void MyClassInitialize(TestContext testContext)
         {
             controller = new OrderController();
-            TestUtil.SetFakeControllerContext(controller);
+            //TestUtil.SetFakeControllerContext(controller);
         }
 
         [TestMethod()]
@@ -41,13 +41,14 @@ namespace Chicken.Web.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
         }
 
-        /*
         [TestMethod()]
         public void DetailsFoundTest()
         {
-
+            var result = controller.Details("2");
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            var resultAsView = result as ViewResult;
+            Assert.AreEqual("Details", resultAsView.ViewName);
         }
-        */
 
         [TestMethod()]
         public void EditNotFoundTest()
