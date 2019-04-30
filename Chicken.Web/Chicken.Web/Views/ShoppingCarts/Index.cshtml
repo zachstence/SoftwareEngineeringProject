@@ -10,148 +10,122 @@
     <h1><span class="menu-header-text">Shopping Cart</span></h1>
 </div>
 
+@using (Html.BeginForm())
+{ 
+    <p>
+        Find Menu Items: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2 col-xs-2">
-            <h4 class="menu-label-text">
+<table class="table">
+        <tr>
+
+            <th>
                 @Html.DisplayNameFor(model => model.Product.Name)
-            </h4>
-        </div>
-        <div class="col-md-2 col-xs-2">
-            <h4 class="menu-label-text">
+
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.DateCreated)
-            </h4>
-        </div>
-        <div class="col-md-2 col-xs-2">
-            <h4 class="menu-label-text">
+
+            </th>
+
+            <th>
                 @Html.DisplayNameFor(model => model.Product.Name)
-            </h4>
-        </div>
-        <div class="col-md-1 col-xs-1">
-            <h4 class="menu-label-text">
+            </th>
+            <th>
+
                 @Html.DisplayNameFor(model => model.Quantity)
-            </h4>
-        </div>
-        <div class="col-md-1 col-xs-1">
-            <h4 class="menu-label-text">
+
+            </th>
+
+            <th>
+
                 @Html.DisplayNameFor(model => model.Product.Cost)
-            </h4>
-        </div>
-        <div class="col-md-1 col-xs-1">
-            <h4 class="menu-label-text">
+
+            </th>
+
+            <th>
+
                 Total
-            </h4>
-        </div>
-        @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
-        {
-            <div class="col-md-1 col-xs-1">
-                <h4 class="menu-label-text">
+
+            </th>
+
+            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+            {
+                <th>
+
                     Inventory
-                </h4>
-            </div>
-        }
-    </div>
-    
-    @foreach (var item in Model)
-    {
-        <div class="row">
-            <div class="col-md-2 col-xs-2">
-                <p>
-                    @Html.DisplayFor(modelItem => item.CartId)
-                </p>
-            </div>
-            <div class="col-md-2 col-xs-2">
-                <p>
-                    @Html.DisplayFor(modelItem => item.DateCreated)
-                </p>
-            </div>
-            <div class="col-md-2 col-xs-2">
-                <p>
-                    @Html.DisplayFor(modelItem => item.Product.Name)
-                </p>
-            </div>
-            <div class="col-md-1 col-xs-1">
-                <p>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </p>
-            </div>
-            <div class="col-md-1 col-xs-1">
-                <p>
-                    @Html.DisplayFor(modelItem => item.Product.Cost)
-                </p>
-            </div>
-            <div class="col-md-1 col-xs-1">
-                <p>
-                    @(item.Quantity * item.Product.Cost)
-                </p>
-            </div>
-            @if (User.IsInRole("Manager")|| User.IsInRole("Employee"))
-            {
-                <div class="col-md-1 col-xs-1">
-                    <p>
-                        @(item.Product.Quantity)
-                    </p>
-                </div>
+
+                </th>
             }
-            <div class="col-md-1 col-xs-1">
-                <p>
-                        
-                    @Html.ActionLink("Remove", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-                        
 
-                </p>
-               
-            </div>
-            <div class="col-md-1 col-xs-1">
-                @if (item.Quantity != 0)
-                    {
-                        <p>
-                       
-                                @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-                           
-
-                        </p>
-                    }
-                    @if (item.Product.Quantity != 0)
-                    {
-                        <p>
-                      
-                                @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-                           
-
-                        </p>
-                    }
-            </div>
-            
-
-        </div>
-
-    }
-</div>
-
-
-@*
-   
-
-            <td>
-                @Html.ActionLink("Remove From Cart", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
-            </td>
-            @if (item.Quantity != 0)
-            {
-                <td>
-                    @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new {removeCartID = item.CartId, removeProductID = item.ProductId}, null)
-                </td>
-            }
-            @if (item.Product.Quantity != 0)
-            {
-                <td>
-                    @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new {removeCartID = item.CartId, removeProductID = item.ProductId}, null)
-                </td>
-            }
+            <th></th>
         </tr>
 
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartId)
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+
+                </td>
+
+                <td>$
+                    @Html.DisplayFor(modelItem => item.Product.Cost)
+
+                </td>
+
+                <td>$
+                    @(item.Quantity * item.Product.Cost)
+
+                </td>
 
 
-</table>*@
+                @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                {
+                    <td>
+                        @(item.Product.Quantity)
+
+                    </td>
+                }
+
+                <td>
+                    @Html.ActionLink("Remove From Cart", "RemoveItem", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                </td>
+                @if (item.Quantity != 0)
+                {
+                    <td>
+                        @Html.ActionLink("-", "ReduceQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                    </td>
+                }
+                @if (item.Product.Quantity != 0)
+                {
+                    <td>
+                        @Html.ActionLink("+", "IncreaseQuantity", "ShoppingCarts", new { removeCartID = item.CartId, removeProductID = item.ProductId }, null)
+                    </td>
+                }
+            </tr>
+
+        }
+
+
+    </table>
+
+
+
+
