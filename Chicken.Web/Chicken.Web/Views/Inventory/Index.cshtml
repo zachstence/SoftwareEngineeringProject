@@ -9,103 +9,116 @@
     <h1><span class="menu-header-text">Menu</span></h1>
 </div>
 
-@if (User.IsInRole("Manager"))
+@if (User.IsInRole("Manager") || User.IsInRole("Admin"))
 {
     <p class="btn btn-default" style="margin-bottom: 10px;">
         @Html.ActionLink("Create New", "Create")
     </p>
 }
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 col-xs-2">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Name)
-                </h4>
-            </div>
-            <div class="col-md-2 col-xs-2">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Category)
-                </h4>
-            </div>
-            <div class="col-md-2 col-xs-2">
-                <h4 class="menu-label-text">
-                    @Html.DisplayNameFor(model => model.Cost)
-                </h4>
-            </div>
+@using (Html.BeginForm())
+{
+    <p>
+        Find Menu Items: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
+                @Html.DisplayNameFor(model => model.Name)
+            </h4>
+        </div>
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
+                @Html.DisplayNameFor(model => model.Category)
+            </h4>
+        </div>
+        <div class="col-md-2 col-xs-2">
+            <h4 class="menu-label-text">
+                @Html.DisplayNameFor(model => model.Cost)
+            </h4>
+        </div>
+        @if (User.IsInRole("Manager") || User.IsInRole("Admin"))
+        {
             <div class="col-md-2 col-xs-2">
                 <h4 class="menu-label-text">
                     @Html.DisplayNameFor(model => model.Quantity)
                 </h4>
             </div>
+        }
+        
 
-        </div>
+    </div>
 
-        @foreach (var item in Model)
+    @foreach (var item in Model)
+    {
+        if (item.Quantity != 0 || User.IsInRole("Manager") || User.IsInRole("Admin"))
         {
-            if (item.Quantity != 0 || User.IsInRole("Manager"))
-            {
-                <div class="row">
-                    <div class="col-md-2 col-xs-2">
-                        <p>
-                            @Html.DisplayFor(modelItem => item.Name)
+            <div class="row">
+                <div class="col-md-2 col-xs-2">
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Name)
 
-                        </p>
-                    </div>
-                    <div class="col-md-2 col-xs-2">
-                        <p>
-                            @Html.DisplayFor(modelItem => item.Category)
+                    </p>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Category)
 
-                        </p>
-                    </div>
-                    <div class="col-md-2 col-xs-2">
-                        <p>$
-                            @Html.DisplayFor(modelItem => item.Cost)
+                    </p>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <p>
+                        $
+                        @Html.DisplayFor(modelItem => item.Cost)
 
-                        </p>
-                    </div>
-                    
-                    @if (User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-2 col-xs-2">
-                            <p>
-                                @Html.DisplayFor(modelItem => item.Quantity)
-
-                            </p>
-                        </div>
-
-                    }
-
-
-                    @if (!User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-4 col-xs-4">
-                            <p>
-                                <span class="btn btn-default">
-                                    @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
-                                </span>
-
-                            </p>
-                        </div>
-
-                    }
-
-                    @if (User.IsInRole("Manager"))
-                    {
-                        <div class="col-md-4 col-xs-4">
-                            <p>
-                                <span class="btn btn-default">
-                                    @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
-                                </span>
-                            </p>
-                        </div>
-
-                    }
+                    </p>
                 </div>
 
-            }
+                @if (User.IsInRole("Manager") || User.IsInRole("Admin"))
+                {
+                    <div class="col-md-2 col-xs-2">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+
+                        </p>
+                    </div>
+
+                }
+
+
+                @if (!User.IsInRole("Manager") & !User.IsInRole("Admin"))
+                {
+                    <div class="col-md-4 col-xs-4">
+                        <p>
+                            <span class="btn btn-default">
+                                @Html.ActionLink("Add to Cart", "AddToCart", "Inventory", new { id = item.Id }, null)
+                            </span>
+
+                        </p>
+                    </div>
+
+                }
+
+                @if (User.IsInRole("Manager") || User.IsInRole("Admin"))
+                {
+                    <div class="col-md-4 col-xs-4">
+                        <p>
+                            <span class="btn btn-default">
+                                @Html.ActionLink("Edit", "Edit", "Inventory", new { id = item.Id }, null)
+                            </span>
+                        </p>
+                    </div>
+
+                }
+            </div>
 
         }
 
-    </div>
+    }
+
+</div>
 
