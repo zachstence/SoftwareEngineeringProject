@@ -32,35 +32,37 @@ namespace Chicken.Web.Controllers.Tests
         public void TestInitialize()
         {
             db = new InventoryDb();
+            controller = new OrderController(db);
+            TestUtil.SetFakeControllerContext(controller);
+
+            var ci = db.ShoppingCartItems.SingleOrDefault(
+                c => c.CartId == "UnitTest"
+                && c.ItemId == "TestItemId");
+            if (ci != null) db.ShoppingCartItems.Remove(ci);
+
 
             invItem = new Inventory.Entities.Inventory
             {
-                Id = 2,
-                Name = "Test Item2",
+                Id = 1,
+                Name = "Test Item",
                 Cost = 1,
                 Quantity = 1
             };
 
             cartItem = new CartItem
             {
-                ItemId = "TestItemId2",
-                ProductId = 2,
-                CartId = "UnitTest2",
+                ItemId = "TestItemId",
+                ProductId = 1,
+                CartId = "UnitTest",
                 Product = invItem,
                 Quantity = 1,
                 DateCreated = DateTime.Now
             };
 
             db.Inventory.Add(invItem);
+            db.SaveChanges();
             db.ShoppingCartItems.Add(cartItem);
-
-            var ci = db.ShoppingCartItems.SingleOrDefault(
-                c => c.CartId == "UnitTest"
-                 && c.ProductId == 2);
-            ci.Quantity = 1;
-
-            controller = new OrderController(db);
-            TestUtil.SetFakeControllerContext(controller);
+            db.SaveChanges();
         }
 
         [TestMethod()]
