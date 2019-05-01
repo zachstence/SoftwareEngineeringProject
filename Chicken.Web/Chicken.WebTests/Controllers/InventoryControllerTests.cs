@@ -50,19 +50,19 @@ namespace Chicken.Web.Controllers.Tests
                 Cost = 1,
                 Quantity = 1
             };
+            db.Inventory.Add(invItem);
+            db.SaveChanges();
+
 
             cartItem = new CartItem
             {
                 ItemId = "TestItemId",
-                ProductId = 1,
+                ProductId = invItem.Id,
                 CartId = "UnitTest",
                 Product = invItem,
                 Quantity = 1,
                 DateCreated = DateTime.Now
             };
-
-            db.Inventory.Add(invItem);
-            db.SaveChanges();
             db.ShoppingCartItems.Add(cartItem);
             db.SaveChanges();
 
@@ -99,7 +99,7 @@ namespace Chicken.Web.Controllers.Tests
         /// </summary>
         public void AddToCartTest()
         {
-            int id = 1;
+            int id = cartItem.ProductId;
             int beforeQuantity = cartItem.Quantity;
 
             var result = controller.AddToCart(id) as ActionResult;
@@ -123,7 +123,7 @@ namespace Chicken.Web.Controllers.Tests
         /// </summary>
         public void EditTest()
         {
-            int id = 1;
+            int id = 5;
             var result = controller.Edit(id) as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
 
