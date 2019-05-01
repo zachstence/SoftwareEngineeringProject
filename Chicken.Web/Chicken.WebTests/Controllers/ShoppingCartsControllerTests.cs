@@ -17,6 +17,9 @@ using System.Data.Common;
 namespace Chicken.Web.Controllers.Tests
 {
     [TestClass()]
+    /// <summary>
+    /// Class responsible for testing the ShoppingCartsController class.
+    /// </summary>
     public class ShoppingCartsControllerTests
     {
 
@@ -26,6 +29,10 @@ namespace Chicken.Web.Controllers.Tests
         static Inventory.Entities.Inventory invItem;
 
         [TestInitialize()]
+        /// <summary>
+        /// Runs before each test to initialize all data structures to use in testing. Creates a mock inventory and cart item and adds them to the
+        /// database. Then sets the mock database and context in the controller to use for testing.
+        /// </summary>
         public void TestInitalize() {
 
             db = new InventoryDb();
@@ -63,6 +70,10 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests the ReduceQuantity method. Uses the mock data structures to make sure reducing the quantity of an item causes the correct changes
+        /// in quantity in the database.
+        /// </summary>
         public void ReduceQuantityTest()
         {
 
@@ -88,12 +99,18 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Index method returns the proper view.
+        /// </summary>
         public void IndexTest() {
             var result = controller.Index() as ViewResult;
             Assert.AreEqual("Index", result.ViewName);
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the controller returns the correct cart ID set in the mock HttpContext.
+        /// </summary>
         public void GetCartIdTest()
         {
             var result = controller.GetCartId();
@@ -101,6 +118,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure that the controller return the cart items present in the database.
+        /// </summary>
         public void GetCartItemsTest()
         {
             var result = controller.GetCartItems();
@@ -110,6 +130,10 @@ namespace Chicken.Web.Controllers.Tests
 
 
         [TestMethod()]
+        /// <summary>
+        /// Tests the IncreaseQuantity method. Uses the mock data structures to make sure increasing the quantity of an item causes the correct changes
+        /// in quantity in the database.
+        /// </summary>
         public void IncreaseQuantityTest()
         {
             var cartId = cartItem.CartId;

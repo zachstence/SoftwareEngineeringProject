@@ -15,6 +15,13 @@ namespace Chicken.Web.Controllers
     {
         private InventoryDb db = new InventoryDb();
 
+        public OrderController() { }
+
+        public OrderController(InventoryDb db)
+        {
+            this.db = db;
+        }
+
         // GET: Order
         public ActionResult Index(string sortOrder, string searchString)
         {

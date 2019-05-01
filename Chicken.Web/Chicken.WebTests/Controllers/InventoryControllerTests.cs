@@ -14,6 +14,9 @@ using Chicken.Web.DataContexts;
 namespace Chicken.Web.Controllers.Tests
 {
     [TestClass()]
+    /// <summary>
+    /// Class responsible for testing the Inventory class.
+    /// </summary>
     public class InventoryControllerTests
     {
 
@@ -23,6 +26,10 @@ namespace Chicken.Web.Controllers.Tests
         static Inventory.Entities.Inventory invItem;
 
         [TestInitialize()]
+        /// <summary>
+        /// Runs before each test to initialize all data structures to use in testing. Creates a mock inventory and cart item and adds them to the
+        /// database. Then sets the mock database and context in the controller to use for testing.
+        /// </summary>
         public void TestInitialize()
         {
 
@@ -60,6 +67,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Index method returns the proper view.
+        /// </summary>
         public void IndexTest()
         {
             var result = controller.Index() as ActionResult;
@@ -69,6 +79,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Create method returns the proper view.
+        /// </summary>
         public void CreateTest()
         {
             var result = controller.Create() as ActionResult;
@@ -78,6 +91,10 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the AddToCart method properly adds an item to the cart and the product quantities in the cart and inventory
+        /// database reflect the changes.
+        /// </summary>
         public void AddToCartTest()
         {
             int id = 1;
@@ -99,6 +116,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Edit method returns the proper view.
+        /// </summary>
         public void EditTest()
         {
             int id = 1;
@@ -114,6 +134,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Edit method returns the proper view when passed a null id.
+        /// </summary>
         public void EditNullTest()
         {
             int? id = null;
@@ -124,6 +147,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Edit method returns the proper view when passed an id that is not found in the database.
+        /// </summary>
         public void EditNotFoundTest()
         {
             int id = -1;
@@ -132,6 +158,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Delete method returns the proper view when passed a null id.
+        /// </summary>
         public void DeleteNullTest()
         {
             var result = controller.Delete(null);
@@ -141,6 +170,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the Delete method returns the proper view.
+        /// </summary>
         public void DeleteTest()
         {
             int id = 1;
@@ -155,6 +187,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the DeleteConfirmed method returns the proper view.
+        /// </summary>
         public void DeleteConfirmedTest()
         {
             int id = 1;
@@ -168,6 +203,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the GetCartId method returns the proper cart id from the mocked controller context.
+        /// </summary>
         public void GetCartIdTest()
         {
             var result = controller.GetCartId();
@@ -175,6 +213,9 @@ namespace Chicken.Web.Controllers.Tests
         }
 
         [TestMethod()]
+        /// <summary>
+        /// Tests to make sure the GetCartItems method returns the proper view and model.
+        /// </summary>
         public void GetCartItemsTest()
         {
             var result = controller.GetCartItems();
