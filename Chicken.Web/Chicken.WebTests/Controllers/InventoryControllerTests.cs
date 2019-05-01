@@ -123,7 +123,7 @@ namespace Chicken.Web.Controllers.Tests
         /// </summary>
         public void EditTest()
         {
-            int id = 5;
+            int id = cartItem.ProductId;
             var result = controller.Edit(id) as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
 
@@ -177,7 +177,7 @@ namespace Chicken.Web.Controllers.Tests
         /// </summary>
         public void DeleteTest()
         {
-            int id = 1;
+            int id = cartItem.ProductId;
             var result = controller.Delete(id) as ActionResult;
             Assert.IsInstanceOfType(result, typeof(ViewResult));
 
@@ -194,7 +194,7 @@ namespace Chicken.Web.Controllers.Tests
         /// </summary>
         public void DeleteConfirmedTest()
         {
-            int id = 1;
+            int id = cartItem.ProductId;
             var result = controller.DeleteConfirmed(id) as ActionResult;
             var resultAsredirectToRouteResult = result as RedirectToRouteResult;
             var dict = resultAsredirectToRouteResult.RouteValues;
