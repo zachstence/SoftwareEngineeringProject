@@ -34,6 +34,14 @@ namespace Chicken.Web.Controllers.Tests
         {
 
             db = new InventoryDb();
+            controller = new InventoryController(db);
+            TestUtil.SetFakeControllerContext(controller);
+
+            var ci = db.ShoppingCartItems.SingleOrDefault(
+                c => c.CartId == "UnitTest"
+                && c.ItemId == "TestItemId");
+            if (ci != null) db.ShoppingCartItems.Remove(ci);
+
 
             invItem = new Inventory.Entities.Inventory
             {
@@ -53,16 +61,10 @@ namespace Chicken.Web.Controllers.Tests
                 DateCreated = DateTime.Now
             };
 
-            var ci = db.ShoppingCartItems.SingleOrDefault(
-                c => c.CartId == "UnitTest"
-                 && c.ProductId == 1);
-            ci.Quantity = 1;
-
             db.Inventory.Add(invItem);
-            //db.ShoppingCartItems.Add(cartItem);
-
-            controller = new InventoryController(db);
-            TestUtil.SetFakeControllerContext(controller);
+            db.SaveChanges();
+            db.ShoppingCartItems.Add(cartItem);
+            db.SaveChanges();
 
         }
 
