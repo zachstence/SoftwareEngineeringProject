@@ -28,6 +28,11 @@ namespace Chicken.Web.Controllers.Tests
         static CartItem cartItem;
         static Inventory.Entities.Inventory invItem;
 
+        static string CART_ID = "UnitTest";
+        static string CART_ITEM_ID = "TestCartItemId";
+        static string INV_ITEM_NAME = "TestInvItemName";
+        static int ID = 1;
+
         [TestInitialize()]
         /// <summary>
         /// Runs before each test to initialize all data structures to use in testing. Creates a mock inventory and cart item and adds them to the
@@ -40,24 +45,24 @@ namespace Chicken.Web.Controllers.Tests
             TestUtil.SetFakeControllerContext(controller);
 
             var ci = db.ShoppingCartItems.SingleOrDefault(
-                c => c.CartId == "UnitTest"
-                && c.ItemId == "TestItemId");
+                c => c.CartId == CART_ID
+                && c.ItemId == CART_ITEM_ID);
             if (ci != null) db.ShoppingCartItems.Remove(ci);
 
 
             invItem = new Inventory.Entities.Inventory
             {
-                Id = 1,
-                Name = "Test Item",
+                Id = ID,
+                Name = INV_ITEM_NAME,
                 Cost = 1,
                 Quantity = 1
             };
 
             cartItem = new CartItem
             {
-                ItemId = "TestItemId",
-                ProductId = 1,
-                CartId = "UnitTest",
+                ItemId = CART_ITEM_ID,
+                ProductId = ID,
+                CartId = CART_ID,
                 Product = invItem,
                 Quantity = 1,
                 DateCreated = DateTime.Now
@@ -114,7 +119,7 @@ namespace Chicken.Web.Controllers.Tests
         public void GetCartIdTest()
         {
             var result = controller.GetCartId();
-            Assert.AreEqual("UnitTest", result);
+            Assert.AreEqual(CART_ID, result);
         }
 
         [TestMethod()]
